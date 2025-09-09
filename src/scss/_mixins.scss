@@ -1,0 +1,51 @@
+@use "sass:meta"; // để dùng map-get, map-has-key an toàn
+@use "lib"; // import các biến trong _lib.scss
+
+// Helper: lấy giá trị từ map trong lib
+@function color($map, $key) {
+    @if map-has-key($map, $key) {
+        @return map.get($map, $key);
+    }
+
+    @else {
+        @error "Key `#{$key}` không tồn tại trong map.";
+    }
+}
+
+// Export theme thành CSS variables
+@mixin export-theme($theme-map) {
+    @each $key, $value in $theme-map {
+        --#{meta.inspect($key)}: #{$value};
+    }
+}
+
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@mixin flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}

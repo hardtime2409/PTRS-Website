@@ -1,0 +1,52 @@
+@use "mixins";
+@use "lib";
+
+
+
+$primary-color: #0aacf5;
+$inverse-background: #12131A;
+$white: #FFFFFF;
+
+
+
+
+
+header {
+    .container {
+        @include mixins.flex-center;
+    }
+
+    h1 {
+        color: var(--primary);
+    }
+
+    nav {
+        flex: 1 0 0%;
+        @include mixins.flex-center;
+    }
+
+    .menu-item {
+        @include mixins.flex-center;
+        padding: 28px 20px;
+        text-decoration: none;
+        color: var(--on-surface);
+        position: relative;
+    }
+
+    .menu-item.current-item {
+        color: var(--primary);
+    }
+
+    .menu-item.current-item:after {
+        content: "";
+        position: absolute;
+        width: 36px;
+        height: 2px;
+        background-color: var(--primary);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;        
+    }
+    
+}

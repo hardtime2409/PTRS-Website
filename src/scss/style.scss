@@ -1,0 +1,226 @@
+@use "lib";
+@use "mixins";
+
+// Áp theme mặc định
+:root {
+    @include mixins.export-theme(lib.$light-theme);
+}
+
+// Áp dark theme
+[data-theme="dark"] {
+    @include mixins.export-theme(lib.$dark-theme);
+}
+
+
+
+$primary-color: #0aacf5;
+$inverse-background: #12131A;
+$white: #FFFFFF;
+
+
+
+
+
+
+
+
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+main {
+    min-height: calc(100vh - 495px)
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h2 {
+    @media (min-width: 1320px) {
+        font-size: 32px;
+    }
+}
+
+.paragraph {
+    line-height: 180%;
+}
+
+
+button {
+    border: none;
+    font-family: "Poppins", sans-serif;
+    border-radius: 100px;
+}
+
+button.lg {
+    height: 48px;
+    @include mixins.flex-center();
+    font-size: 16px;
+}
+
+
+button.primary-filled {
+    background: #0050F1;
+    color: $white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.head {
+    @include mixins.flex-column();
+    gap: 16px;
+
+    .underline {
+        @include mixins.flex-row();
+        width: 90px;
+        height: 4px;
+
+        div {
+            flex: 1 0 0%;
+        }
+
+        div:nth-child(1),
+        div:nth-child(2) {
+            background: #0050F1;
+        }
+
+        div:nth-child(3) {
+            background: rgba(255, 255, 255, .2);
+        }
+    }
+}
+
+
+.inverse-background {
+    background: $inverse-background;
+    color: white;
+}
+
+#intro-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include mixins.flex-center();
+    z-index: 0;
+}
+
+
+section {
+    position: relative;
+}
+
+
+#st-intro {
+    .container {
+        padding: 160px 0 60px 0;
+        z-index: 1;
+        @include mixins.flex-column();
+        gap: 120px;
+    }
+
+    .content {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    .content h2 {
+        margin-bottom: 16px;
+    }
+
+    .content p {
+        opacity: .7;
+        margin-bottom: 48px;
+    }
+
+    button {
+        width: 180px;
+    }
+
+
+}
+
+
+.scrolldown {
+    @include mixins.flex-center;
+
+
+    div {
+        width: 32px;
+        height: 48px;
+        background: rgba(255, 255, 255, .2);
+        position: relative;
+        border-radius: 100px;
+    }
+
+    div:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $white;
+    }
+}
+
+
+span.highlight {
+    color: #0050F1;
+}
+
+
+.btns {
+    @include mixins.flex-center();
+    gap: 12px;
+}

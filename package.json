@@ -1,22 +1,23 @@
 {
     "name": "ptrs-website",
     "version": "1.0.0",
-    "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build:css": "sass src/style.scss dist/style.css",
-        "copy:html": "copy src\\index.html dist\\index.html",
-        "copy:js": "copy src\\main.js dist\\main.js",
-        "build": "npm run build:css && npm run copy:html && npm run copy:js",
-        "watch:css": "sass --watch src/style.scss dist/style.css",
-        "start": "live-server dist"
+        "build:scss": "sass src/scss:dist/css --no-source-map",
+        "watch:scss": "sass --watch src/scss:dist/css --no-source-map",
+        "copy:index": "cpx \"src/index.html\" dist",
+        "copy:components": "mkdir dist\\components 2>nul & cpx \"src/components/*.html\" dist/components",
+        "copy:js": "mkdir dist\\js 2>nul & cpx \"src/js/*.js\" dist/js",
+        "copy:assets": "npm run copy:index && npm run copy:components && npm run copy:js",
+        "build": "npm run build:scss && npm run copy:assets",
+        "watch:assets": "chokidar \"src/**/*.{html,js}\" -c \"npm run copy:assets\"",
+        "live": "live-server dist --port=8080",
+        "dev": "npm run build && npm-run-all --parallel watch:scss watch:assets live"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
     "devDependencies": {
+        "sass": "^1.77.0",
+        "npm-run-all": "^4.1.5",
+        "chokidar-cli": "^3.0.0",
         "live-server": "^1.2.2",
-        "sass": "^1.92.1"
+        "cpx": "^1.5.0"
     }
 }
