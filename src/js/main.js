@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     (async () => {
         try {
-            const res = await fetch("components/intro-svg.html");
-            if (!res.ok) throw new Error(`Cannot load intro-svg.html: ${res.status}`);
+            const res = await fetch("components/svg-boxes.html");
+            if (!res.ok) throw new Error(`Cannot load svg-boxes.html: ${res.status}`);
             const html = await res.text();
 
             const container = document.querySelector("#intro-svg");
@@ -111,3 +111,165 @@ function sampleFunction() {
     cubetl2.to($cube2, 1, { x: 91.244, y: -338.96, delay: 3 })
 
 }
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Init Context
+    const c = document.createElement('canvas').getContext('2d');
+    var container = document.getElementById("intro-svg-dots");
+    const postctx = container.appendChild(document.createElement('canvas')).getContext('2d');
+    const canvas = c.canvas;
+    const vertices = [];
+
+    // Effect Properties
+    const vertexCount = 4000; // 7000
+    const vertexSize = 3;
+    const oceanWidth = 100; // 204
+    const oceanHeight = -80;
+    const gridSize = 20; // 32
+    const waveSize = 20;
+    const perspective = 400;
+
+    // Common variables
+    const depth = (vertexCount / oceanWidth * gridSize);
+    let frame = 0;
+    const { sin, cos } = Math;
+
+    // Render loop
+    const loop = () => {
+        frame++;
+        if (postctx.canvas.width !== postctx.canvas.offsetWidth || postctx.canvas.height !== postctx.canvas.offsetHeight) {
+            postctx.canvas.width = canvas.width = postctx.canvas.offsetWidth;
+            postctx.canvas.height = canvas.height = postctx.canvas.offsetHeight;
+        }
+
+
+        c.fillStyle = `hsl(240deg, 50%, 4%)`;
+        
+        // c.fillStyle = '#1A1C28';
+        c.fillRect(0, 0, canvas.width, canvas.height);
+        
+        c.save();
+        c.translate(canvas.width / 2, canvas.height / 2);
+
+        c.beginPath();
+        vertices.forEach((vertex, i) => {
+            let x = vertex[0] - frame % (gridSize * 2);
+
+            /*------ SPEED SETTINGS------*/
+            const z = vertex[2] - frame * 0.5 % gridSize + (i % 2 === 0 ? gridSize / 2 : 0);
+            const wave = (
+                cos(frame / 90 + x / 50) -
+                sin(frame / 40 + z / 50) +
+                sin(frame / 60 + z * x / 10000)
+            );
+
+
+            
+            let y = vertex[1] + wave * waveSize;
+            const a = Math.max(0, 1 - (Math.sqrt(x ** 2 + z ** 2)) / depth);
+
+            y -= oceanHeight;
+
+            x /= z / perspective;
+            y /= z / perspective;
+
+
+            if (a < 0.01) return;
+            if (z < 0) return;
+
+
+            c.globalAlpha = a;
+            c.fillStyle = `hsl(${240 + wave * 4}deg, 85%, 46%)`;
+            c.fillRect(x - a * vertexSize / 2, y - a * vertexSize / 2, a * vertexSize, a * vertexSize);
+            c.globalAlpha = 1;
+        });
+        c.restore();
+
+        // Post-processing
+        postctx.drawImage(canvas, 0, 0);
+
+        postctx.globalCompositeOperation = 'screen';
+        postctx.drawImage(canvas, 0, 0);
+        postctx.globalCompositeOperation = 'source-over';
+
+        requestAnimationFrame(loop);
+    };
+
+    // Generating dots
+    for (let i = 0; i < vertexCount; i++) {
+        const x = i % oceanWidth;
+        const y = 0;
+        const z = i / oceanWidth >> 0;
+        const offset = oceanWidth / 2;
+        vertices.push([(-offset + x) * gridSize, y * gridSize, z * gridSize]);
+    }
+
+    loop();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    (async () => {
+        const divs = document.querySelectorAll('div[data-svg]');
+
+        for (const div of divs) {
+            const name = div.getAttribute('data-svg')?.trim();
+            if (!name) continue; // bỏ qua nếu value rỗng
+
+            try {
+                // fetch file svg tương ứng
+                const response = await fetch(`../assets/${name}.svg`);
+                if (!response.ok) throw new Error(`Không load được SVG: ${name}`);
+
+                const svgText = await response.text();
+
+                // chèn nội dung svg vào div
+                div.innerHTML = svgText;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    })();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Lưu trạng thái trước
+    let lastIsDark = null;
+
+    // Hàm áp theme dựa trên attribute
+    function updateTheme() {
+        const isDark = document.documentElement.hasAttribute('native-dark-active');
+        if (isDark !== lastIsDark) {
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            console.log('Applied theme:', isDark ? 'dark' : 'light');
+            lastIsDark = isDark;
+        }
+    }
+
+    // Chạy ngay khi load page
+    updateTheme();
+
+    // Lắng nghe sự thay đổi attribute native-dark-active
+    const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'native-dark-active') {
+                updateTheme();
+            }
+        }
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+});
+
+

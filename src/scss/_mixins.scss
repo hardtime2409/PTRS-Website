@@ -1,7 +1,15 @@
 @use "sass:meta"; // để dùng map-get, map-has-key an toàn
-@use "lib"; // import các biến trong _lib.scss
+@use "lib_color"; // import các biến trong _lib.scss
+@use "lib_text"; // import các biến trong _lib.scss
 
-// Helper: lấy giá trị từ map trong lib
+
+
+
+
+
+
+
+
 @function color($map, $key) {
     @if map-has-key($map, $key) {
         @return map.get($map, $key);
@@ -12,7 +20,7 @@
     }
 }
 
-// Export theme thành CSS variables
+
 @mixin export-theme($theme-map) {
     @each $key, $value in $theme-map {
         --#{meta.inspect($key)}: #{$value};
@@ -48,4 +56,126 @@
 @mixin flex-row {
     display: flex;
     flex-wrap: wrap;
+}
+
+
+
+
+@mixin row-top-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+@mixin row-top-center {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@mixin row-top-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+
+@mixin row-center-left {
+    display: flex;
+    align-items: center;
+}
+
+@mixin row-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin row-center-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+@mixin row-bottom-left {
+    display: flex;
+    align-items: flex-end;
+}
+
+@mixin row-bottom-center {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+@mixin row-bottom-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+
+
+
+@mixin column-top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@mixin column-top-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin column-top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+@mixin column-center-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@mixin column-center-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin column-center-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+@mixin column-bottom-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+@mixin column-bottom-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@mixin column-bottom-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }

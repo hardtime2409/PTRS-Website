@@ -4,12 +4,13 @@
     "scripts": {
         "build:scss": "sass src/scss:dist/css --no-source-map",
         "watch:scss": "sass --watch src/scss:dist/css --no-source-map",
-        "copy:index": "cpx \"src/index.html\" dist",
-        "copy:components": "mkdir dist\\components 2>nul & cpx \"src/components/*.html\" dist/components",
+        "copy:html": "cpx \"src/**/*.html\" dist",
         "copy:js": "mkdir dist\\js 2>nul & cpx \"src/js/*.js\" dist/js",
-        "copy:assets": "npm run copy:index && npm run copy:components && npm run copy:js",
+        "copy:assets-folder": "cpx \"src/assets/**/*\" dist/assets",
+        "copy:assets": "npm run copy:html && npm run copy:js && npm run copy:assets-folder",
         "build": "npm run build:scss && npm run copy:assets",
-        "watch:assets": "chokidar \"src/**/*.{html,js}\" -c \"npm run copy:assets\"",
+        "watch:assets": "chokidar \"src/**/*.{html,js,svg}\" -c \"npm run copy:assets\"",
+
         "live": "live-server dist --port=8080",
         "dev": "npm run build && npm-run-all --parallel watch:scss watch:assets live"
     },

@@ -1,17 +1,12 @@
 @use "mixins";
-@use "lib";
-
-
-
-$primary-color: #0aacf5;
-$inverse-background: #12131A;
-$white: #FFFFFF;
+@use "lib_color";
 
 
 
 
 
 header {
+    background-color: var(--surface);
     .container {
         @include mixins.flex-center;
     }
@@ -29,7 +24,7 @@ header {
         @include mixins.flex-center;
         padding: 28px 20px;
         text-decoration: none;
-        color: var(--on-surface);
+        color: var(--on-surface) !important;
         position: relative;
     }
 
@@ -48,5 +43,7 @@ header {
         transform: translateX(-50%);
         border-radius: 10px;        
     }
+
+    
     
 }

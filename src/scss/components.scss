@@ -1,0 +1,589 @@
+@use "lib_color" as color;
+@use "lib_text" as text;
+@use "mixins";
+
+
+
+.card-dev-scope {
+    @include mixins.row-top-left;
+    padding: 12px;
+    gap: 12px;
+    flex: 1 0 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+
+    >div:nth-child(1).icon-wrapper {
+        @include mixins.column-center-center;
+        width: 48px;
+        height: 48px;
+        gap: 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    >div:nth-child(2).info {
+        @include mixins.column-top-left;
+        padding: 4px 0;
+        gap: 2px;
+        flex: 1 0 0;
+
+        >h4:nth-child(1) {
+            @include text.m-title-small;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            align-self: stretch;
+            overflow: hidden;
+            color: var(--white, #FFF);
+            text-overflow: ellipsis;
+        }
+
+        >p:nth-child(2) {
+            @include text.m-body-medium;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            align-self: stretch;
+            overflow: hidden;
+            color: var(--white, #FFF);
+            text-overflow: ellipsis;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+
+.card-partner {
+    @include mixins.column-top-center;
+    width: 360px;
+    height: 293px;
+    padding: 40px 28px;
+    gap: 28px;
+    border-radius: 20px;
+    background: var(--surface-variant, #F7F7FC);
+
+    >div:nth-child(1).logo {
+        @include mixins.row-center-center;
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        border-radius: 100px;
+        background: #FFF;
+    }
+
+    >div:nth-child(2).info {
+        @include mixins.column-top-left;
+        gap: 4px;
+        align-self: stretch;
+
+        >h4:nth-child(1) {
+            @include text.m-title-small;
+            align-self: stretch;
+            color: var(--on-surface, #222432);
+            text-align: center;
+        }
+
+        >p:nth-child(2) {
+            @include text.m-body-medium;
+            align-self: stretch;
+            color: var(--on-surface-variant, #7A7C84);
+            text-align: center;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+.card-person-key {
+    @include mixins.row-top-center;
+    padding: 40px;
+    gap: 28px;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 1px solid var(--outline-variant, #EBECF3);
+    background: var(--black, #1A1C28);
+
+    >div:nth-child(1).frame {
+        @include mixins.row-top-left;
+        gap: 40px;
+        flex: 1 0 0;
+
+        >div:nth-child(1).group-30 {
+            width: 160px;
+            height: 200px;
+            aspect-ratio: 4/5;
+
+            >div:nth-child(1).frame {
+                width: 160px;
+                height: 200px;
+                flex-shrink: 0;
+            }
+        }
+
+        >div:nth-child(2).info {
+            @include mixins.column-top-left;
+            padding: 16px 0;
+            gap: 32px;
+            flex: 1 0 0;
+            border-radius: 40px;
+
+            >div:nth-child(1).texts {
+                @include mixins.column-top-left;
+                gap: 24px;
+                align-self: stretch;
+
+                >div:nth-child(1).title {
+                    @include mixins.column-top-left;
+                    align-self: stretch;
+
+                    >h2:nth-child(1) {
+                        @include text.m-headline-small;
+                        align-self: stretch;
+                        color: var(--white, #FFF);
+                    }
+
+                    >label:nth-child(2) {
+                        @include text.m-label-large;
+                        align-self: stretch;
+                        color: var(--white, #FFF);
+                        opacity: 0.4;
+                    }
+                }
+
+                >p:nth-child(2) {
+                    @include text.m-body-medium;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 10;
+                    align-self: stretch;
+                    overflow: hidden;
+                    color: var(--white, #FFF);
+                    text-overflow: ellipsis;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+.card-person {
+    @include mixins.row-top-center;
+    padding: 28px;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 20px;
+    background: var(--surface-container, rgba(255, 255, 255, 0.70));
+    backdrop-filter: blur(8px);
+
+    >div:nth-child(1).avatar {
+        width: 80px;
+        height: 80px;
+        aspect-ratio: 1/1;
+
+        >div:nth-child(1).frame {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+    }
+
+    >div:nth-child(2).info {
+        @include mixins.column-top-left;
+        gap: 8px;
+        flex: 1 0 0;
+
+        >div:nth-child(1).title {
+            @include mixins.column-top-left;
+            align-self: stretch;
+
+            >h4:nth-child(1) {
+                @include text.m-title-medium;
+                align-self: stretch;
+                color: var(--on-surface, #222432);
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                align-self: stretch;
+                color: var(--on-surface-variant, #7A7C84);
+            }
+        }
+
+        >p:nth-child(2) {
+            @include text.m-body-medium;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            align-self: stretch;
+            overflow: hidden;
+            color: var(--on-surface-variant, #7A7C84);
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+
+
+
+
+
+
+.card-article {
+    @include mixins.row-top-left;
+    padding: 24px 20px;
+    gap: 20px;
+    align-self: stretch;
+    background: var(--surface, #FFF);
+    position: relative;
+
+    >div:nth-child(2).frame {
+        @include mixins.column-center-left;
+        width: 28px;
+        height: 40px;
+        gap: 10px;
+
+        >div:nth-child(1).frame {
+            @include mixins.row-center-center;
+            padding: 0 4px;
+            gap: 10px;
+            align-self: stretch;
+            border-radius: 4px;
+            border: 0.5px solid var(--on-surface, #222432);
+
+            >p:nth-child(1) {
+                flex: 1 0 0;
+                color: var(--on-surface, #222432);
+                text-align: center;
+                font-family: Poppins;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 14px;
+            }
+        }
+    }
+
+    >div:nth-child(3).frame {
+        @include mixins.row-center-center;
+        padding: 6px 0;
+        gap: 10px;
+        flex: 1 0 0;
+
+        >p:nth-child(1) {
+            flex: 1 0 0;
+            color: var(--on-surface, #222432);
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 180%;
+            text-transform: uppercase;
+        }
+    }
+
+    >div:nth-child(4).frame {
+        @include mixins.column-center-center;
+        width: 40px;
+        height: 40px;
+        gap: 8px;
+        border-radius: 200px;
+    }
+}
+
+
+
+
+.card-a {
+    @include mixins.row-top-left;
+    gap: 40px;
+    align-self: stretch;
+    border-radius: 20px;
+
+    >div:nth-child(1).icon {
+        @include mixins.row-center-center;
+        width: 80px;
+        height: 80px;
+        padding: 6px;
+        gap: 10px;
+        aspect-ratio: 1/1;
+        border-radius: 100px;
+        background: var(--surface, #FFF);
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.04);
+
+        >div:nth-child(1).icon-wrapper {
+            @include mixins.row-center-center;
+            gap: 10px;
+            flex: 1 0 0;
+            align-self: stretch;
+            border-radius: 100px;
+            background: var(--surface-variant, #F7F7FC);
+        }
+    }
+
+    >div:nth-child(2).content {
+        @include mixins.column-top-left;
+        padding: 12px 0;
+        gap: 8px;
+        flex: 1 0 0;
+
+        >h4:nth-child(1) {
+            @include text.m-title-small;
+            align-self: stretch;
+            color: var(--on-surface, #222432);
+        }
+
+        >p:nth-child(2) {
+            @include text.m-body-medium;
+            align-self: stretch;
+            color: var(--on-surface-variant, #7A7C84);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*======== Buttons - L (56) ========*/
+.buttons {
+    overflow: hidden;
+    cursor: pointer;
+
+    @include mixins.row-center-center;
+    width: 256px;
+    height: 48px;
+    flex-shrink: 0;
+    position: relative;
+
+    .label-wrapper {
+        @include mixins.row-center-center;
+
+        >label:nth-child(1) {
+            text-align: center;
+
+        }
+    }
+
+    &.large {
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .label-wrapper {
+            padding: 0 6px;
+
+
+            >label:nth-child(1) {
+                @include text.m-label-large;
+            }
+        }
+    }
+
+
+    &.medium {
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .label-wrapper {
+            padding: 0 4px;
+
+            >label:nth-child(1) {
+                @include text.m-label-medium;
+            }
+        }
+    }
+
+
+    &.small {
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .label-wrapper {
+            padding: 0 2px;
+
+            >label:nth-child(1) {
+                @include text.m-label-small;
+            }
+        }
+    }
+}
+
+
+.buttons {
+
+    &.color-primary {
+        background: var(--key-colors-primary, #0050F1);
+
+        >div:nth-child(2).label-wrapper {
+            @include mixins.row-center-center;
+
+            >label:nth-child(1) {
+                color: var(--white, #FFF);
+            }
+        }
+    }
+
+
+
+    &.color-primary.style-filled {
+        background: var(--key-colors-primary, #0050F1);
+
+        >div:nth-child(2).label-wrapper {
+            @include mixins.row-center-center;
+
+            >label:nth-child(1) {
+                color: var(--white, #FFF);
+            }
+        }
+    }
+
+    &.color-primary.style-filled.state-disabled {
+        opacity: 0.4;
+        background: var(--state-layers-light-on-surface-opacity-016, rgba(25, 27, 36, 0.16));
+
+        >div:nth-child(1).label-wrapper {
+            @include mixins.row-center-center;
+
+            >label:nth-child(1) {
+                color: var(--on-surface-variant, #7A7C84);
+            }
+        }
+    }
+
+    &.color-inverse.style-filled {
+        background: rgba(255, 255, 255, 0.08);
+
+        >div:nth-child(2).label-wrapper {
+            @include mixins.row-center-center;
+
+            >label:nth-child(1) {
+                color: var(--white, #FFF);
+            }
+        }
+    }
+
+    &.color-inverse.style-filled.state-disabled {
+        opacity: 0.4;
+        background: rgba(255, 255, 255, 0.08);
+
+        >div:nth-child(1).label-wrapper {
+            @include mixins.row-center-center;
+
+            >label:nth-child(1) {
+                color: var(--white, #FFF);
+            }
+        }
+    }
+}
+
+/*========================*/
+
+
+
+.state-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out .2s;
+
+
+
+    &.type-primary {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    &.type-primary:hover {
+        background: var(--state-layers-light-primary-opacity-008, rgba(0, 60, 186, 0.08));
+    }
+
+    &.type-primary:focus {
+        background: var(--state-layers-light-primary-opacity-012, rgba(96, 86, 144, 0.12));
+    }
+
+    &.type-primary:active {
+        background: var(--state-layers-light-primary-opacity-016, rgba(0, 60, 186, 0.16));
+    }
+
+    &.type-secondary {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    &.type-secondary:hover {
+        background: var(--state-layers-light-secondary-opacity-008, rgba(0, 100, 146, 0.08));
+    }
+
+    &.type-secondary:focus {
+        background: var(--state-layers-light-secondary-opacity-012, rgba(96, 92, 113, 0.12));
+    }
+
+    &.type-secondary:active {
+        background: var(--state-layers-light-secondary-opacity-016, rgba(0, 100, 146, 0.16));
+    }
+
+    &.type-neutral {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    &.type-neutral:hover {
+        background: var(--state-layers-light-on-surface-opacity-008, rgba(25, 27, 36, 0.08));
+    }
+
+    &.type-neutral:focus {
+        background: var(--state-layers-light-on-surface-opacity-012, rgba(28, 27, 32, 0.12));
+    }
+
+    &.type-neutral:active {
+        background: var(--state-layers-light-on-surface-opacity-016, rgba(25, 27, 36, 0.16));
+    }
+
+    &.type-neutral-variant {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    &.type-neutral-variant:hover {
+        background: var(--state-layers-light-on-surface-variant-opacity-008, rgba(67, 70, 86, 0.08));
+    }
+
+    &.type-neutral-variant:focus {
+        background: var(--state-layers-light-on-surface-variant-opacity-012, rgba(72, 69, 78, 0.12));
+    }
+
+    &.type-neutral-variant:active {
+        background: var(--state-layers-light-on-surface-variant-opacity-016, rgba(67, 70, 86, 0.16));
+    }
+
+    &.type-surface {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    &.type-surface:hover {
+        background: var(--state-layers-light-surface-opacity-008, rgba(250, 248, 255, 0.08));
+    }
+
+    &.type-surface:focus {
+        background: var(--state-layers-light-surface-opacity-012, rgba(253, 248, 255, 0.12));
+    }
+
+    &.type-surface:active {
+        background: var(--state-layers-light-surface-opacity-016, rgba(250, 248, 255, 0.16));
+    }
+}

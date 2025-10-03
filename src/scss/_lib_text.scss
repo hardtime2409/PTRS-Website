@@ -1,0 +1,104 @@
+@mixin m-display-large {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-display-medium {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-display-small {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-headline-large {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-headline-medium {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-headline-small {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120.00000476837158%;
+}
+
+@mixin m-title-large {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+@mixin m-title-medium {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+@mixin m-title-small {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+@mixin m-body-large {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 179.99999523162842%;
+}
+
+@mixin m-body-medium {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 179.99999523162842%;
+}
+
+@mixin m-body-small {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 179.99999523162842%;
+}
+
+@mixin m-label-large {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+@mixin m-label-medium {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+@mixin m-label-small {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+}
