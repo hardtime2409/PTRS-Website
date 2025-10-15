@@ -1,21 +1,21 @@
 @mixin m-display-large {
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: 44px;
+    font-size: 52px;
     line-height: 120.00000476837158%;
 }
 
 @mixin m-display-medium {
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: 36px;
+    font-size: 44px;
     line-height: 120.00000476837158%;
 }
 
 @mixin m-display-small {
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: 28px;
+    font-size: 36px;
     line-height: 120.00000476837158%;
 }
 
@@ -23,82 +23,82 @@
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 32px;
-    line-height: 120.00000476837158%;
+    line-height: 125%;
 }
 
 @mixin m-headline-medium {
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 28px;
-    line-height: 120.00000476837158%;
+    line-height: 125%;
 }
 
 @mixin m-headline-small {
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 24px;
-    line-height: 120.00000476837158%;
+    line-height: 125%;
 }
 
 @mixin m-title-large {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 24px;
-    line-height: 150%;
+    font-size: 20px;
+    line-height: 28px;
 }
 
 @mixin m-title-medium {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 20px;
-    line-height: 150%;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 @mixin m-title-small {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 @mixin m-body-large {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 16px;
-    line-height: 179.99999523162842%;
+    line-height: 28px;
 }
 
 @mixin m-body-medium {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 14px;
-    line-height: 179.99999523162842%;
+    line-height: 24px;
 }
 
 @mixin m-body-small {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 12px;
-    line-height: 179.99999523162842%;
+    line-height: 20px;
 }
 
 @mixin m-label-large {
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 24px;
 }
 
 @mixin m-label-medium {
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 14px;
-    line-height: 150%;
+    line-height: 20px;
 }
 
 @mixin m-label-small {
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 12px;
-    line-height: 150%;
+    line-height: 16px;
 }

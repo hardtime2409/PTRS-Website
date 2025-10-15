@@ -4,7 +4,7 @@
 
 
 
-#st-intro {
+section.intro {
     display: flex;
     min-height: calc(100vh - 81px);
     width: 100%;
@@ -13,7 +13,7 @@
     background: var(--black, #1A1C28);
     position: relative;
 
-    #intro-svg-dots canvas {
+    #dots-wave canvas {
         position: absolute;
         left: 0;
         top: 0;
@@ -23,139 +23,339 @@
 }
 
 
-section.intro {
 
-    >div:nth-child(2).container {
-        @include mixins.column-top-left;
-        width: 1200px;
-        max-width: 1200px;
-        padding: 80px 0;
-        gap: 200px;
 
-        >div:nth-child(1).frame {
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    @include mixins.column-top-center;
+    align-self: stretch;
+
+    >section.intro {
+        @include mixins.column-center-center;
+        min-height: 921px;
+        align-self: stretch;
+        background: var(--black, #1A1C28);
+        position: relative;
+
+        >div:nth-child(1).pseudo-dots-wave {
+            @include mixins.row-center-center;
+            width: 1920px;
+            padding-top: 418.287px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
             @include mixins.column-top-left;
-            max-width: 600px;
-            gap: 48px;
-            align-self: stretch;
+            width: 1200px;
+            max-width: 1200px;
+            padding: 80px 0;
+            gap: 200px;
 
             >div:nth-child(1).frame {
                 @include mixins.column-top-left;
+                max-width: 600px;
+                gap: 48px;
+                align-self: stretch;
+
+                >div:nth-child(1).frame {
+                    @include mixins.column-top-left;
+                    gap: 24px;
+                    align-self: stretch;
+
+                    >h2:nth-child(1) {
+                        @include mixins.row-top-left;
+                        gap: 12px;
+                        align-self: stretch;
+
+                        >span:nth-child(1) {
+                            @include text.m-display-large;
+                            color: var(--primary, #0050F1);
+                        }
+
+                        >span:nth-child(2) {
+                            @include text.m-display-large;
+                            color: var(--white, #FFF);
+                        }
+                    }
+
+                    >p:nth-child(2) {
+                        @include text.m-body-medium;
+                        align-self: stretch;
+                        color: var(--white, #FFF);
+                        opacity: 0.6;
+                    }
+                }
+
+                >div:nth-child(2).frame {
+                    @include mixins.row-top-left;
+                    gap: 16px;
+                }
+            }
+
+            >div:nth-child(2).frame {
+                @include mixins.row-center-right;
                 gap: 24px;
                 align-self: stretch;
 
-                >h2:nth-child(1) {
+                >div:nth-child(1).frame {
                     @include mixins.row-top-left;
-                    gap: 12px;
-                    align-self: stretch;
-
-                    >span:nth-child(1) {
-                        @include text.m-display-large;
-                        color: var(--primary, #0050F1);
-                    }
-
-                    >span:nth-child(2) {
-                        @include text.m-display-large;
-                        color: var(--white, #FFF);
-                    }
+                    gap: 24px;
+                    flex: 1 0 0;
                 }
 
-                >p:nth-child(2) {
-                    @include text.m-body-medium;
-                    align-self: stretch;
+                >div:nth-child(2).line-6 {
+                    width: 200px;
+                    height: 1px;
+                    max-width: 200px;
+                    background: #FFF;
+                }
+
+                >h4:nth-child(3) {
+                    @include text.m-title-large;
+                    transform: rotate(-1.5308806722812968e-22deg);
                     color: var(--white, #FFF);
-                    opacity: 0.6;
+                    text-align: right;
                 }
             }
-
-            >div:nth-child(2).frame {
-                @include mixins.row-top-left;
-                gap: 16px;
-            }
-        }
-
-        >div:nth-child(2).frame {
-            @include mixins.row-top-left;
-            gap: 24px;
-            align-self: stretch;
         }
     }
-}
 
+    >section.core-services {
+        @include mixins.column-center-center;
+        width: 1920px;
+        background: var(--surface-variant, #F7F7FC);
 
-
-
-
-
-/*----- Core Services -----*/
-
-section.core-services {
-    @include mixins.column-center-center;
-    align-self: stretch;
-    background: var(--surface-variant, #F7F7FC);
-
-    >div:nth-child(1).container {
-        @include mixins.row-top-center;
-        max-width: 1200px;
-        padding: 120px 0 160px 0;
-        gap: 120px;
-        align-self: stretch;
-        border-radius: 40px;
-
-        >div:nth-child(1).frame {
-            @include mixins.column-top-left;
-            gap: 60px;
-            flex: 1 0 0;
+        >div:nth-child(1).container {
+            @include mixins.row-top-center;
+            max-width: 1200px;
+            padding: 120px 0 160px 0;
+            gap: 120px;
+            align-self: stretch;
+            border-radius: 40px;
 
             >div:nth-child(1).frame {
-                @include mixins.column-top-center;
-                gap: 16px;
-                align-self: stretch;
+                @include mixins.column-top-left;
+                gap: 60px;
+                flex: 1 0 0;
 
-                >h2:nth-child(1) {
-                    @include mixins.row-center-left;
-                    gap: 8px;
+                >div:nth-child(1).frame {
+                    @include mixins.column-top-center;
+                    gap: 16px;
                     align-self: stretch;
 
-                    >span:nth-child(1) {
-                        @include text.m-headline-large;
-                        color: var(--on-surface, #222432);
+                    >h2:nth-child(1) {
+                        @include mixins.row-center-left;
+                        gap: 8px;
+                        align-self: stretch;
+
+                        >span:nth-child(1) {
+                            @include text.m-headline-large;
+                            color: var(--on-surface, #222432);
+                        }
+
+                        >span:nth-child(2) {
+                            @include text.m-headline-large;
+                            color: var(--primary, #0050F1);
+                        }
                     }
 
-                    >span:nth-child(2) {
-                        @include text.m-headline-large;
-                        color: var(--primary, #0050F1);
+                    >p:nth-child(2) {
+                        @include text.m-body-medium;
+                        align-self: stretch;
+                        color: var(--on-surface-variant, #7A7C84);
+                        opacity: 0.5;
                     }
                 }
 
-                >p:nth-child(2) {
-                    @include text.m-body-medium;
+                >div:nth-child(2).frame {
+                    @include mixins.column-top-left;
+                    gap: 28px;
                     align-self: stretch;
-                    color: var(--on-surface-variant, #7A7C84);
-                    opacity: 0.5;
                 }
             }
 
             >div:nth-child(2).frame {
-                @include mixins.column-top-left;
-                gap: 28px;
-                align-self: stretch;
-            }
-        }
-
-        >div:nth-child(2).frame {
-            @include mixins.column-top-right;
-            gap: 8px;
-            flex: 1 0 0;
-
-            >div:nth-child(1).block {
-                @include mixins.column-top-left;
-                max-width: 440px;
-                padding-top: 10px;
-                gap: 10px;
-                align-self: stretch;
-                position: relative;
+                @include mixins.column-top-right;
+                gap: 8px;
+                flex: 1 0 0;
 
                 >div:nth-child(1).block {
+                    @include mixins.column-top-left;
+                    max-width: 440px;
+                    padding-top: 10px;
+                    gap: 10px;
+                    align-self: stretch;
+                    position: relative;
+
+                    >div:nth-child(1).block {
+                        @include mixins.column-top-left;
+                        height: 280px;
+                        max-width: 440px;
+                        padding: 32px;
+                        gap: 24px;
+                        align-self: stretch;
+                        border-radius: 12px;
+                        background: var(--surface, #FFF);
+                        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+
+                        >div:nth-child(1).frame {
+                            @include mixins.column-center-left;
+                            align-self: stretch;
+                            border-radius: var(--12, 12px);
+
+                            >h4:nth-child(1) {
+                                @include text.m-title-small;
+                                align-self: stretch;
+                                color: var(--additional-key-colors-green, #09C068);
+                            }
+                        }
+
+                        >div:nth-child(2).frame {
+                            @include mixins.row-top-left;
+                            align-self: stretch;
+
+                            >div:nth-child(1).frame {
+                                @include mixins.column-top-left;
+                                min-width: 224px;
+                                gap: var(--4, 4px);
+                                flex: 1 0 0;
+
+                                >div:nth-child(1).byewind {
+                                    @include mixins.row-center-left;
+                                    padding: 8px;
+                                    gap: var(--8, 8px);
+                                    align-self: stretch;
+                                    border-radius: 16px;
+                                    background: var(--primary-container, #F5F8FE);
+
+                                    >div:nth-child(1).frame {
+                                        @include mixins.column-top-left;
+                                        width: 28px;
+                                        height: 28px;
+                                        padding: var(--4, 4px);
+                                        border-radius: 100px;
+                                        background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+                                    }
+
+                                    >p:nth-child(2) {
+                                        @include text.m-body-medium;
+                                        flex: 1 0 0;
+                                        color: var(--on-surface, #222432);
+                                    }
+
+                                    >div:nth-child(3).status-badge {
+                                        @include mixins.row-center-left;
+                                        padding: var(--4, 4px) var(--12, 12px);
+                                        border-radius: var(--80, 80px);
+                                        background: var(--violet-container, #F3E2FC);
+
+                                        >p:nth-child(1) {
+                                            @include text.m-body-medium;
+                                            color: var(--additional-key-colors-violet, #9F10E3);
+                                        }
+                                    }
+                                }
+
+                                >div:nth-child(2).natali-craig {
+                                    @include mixins.row-center-left;
+                                    padding: 8px;
+                                    gap: var(--8, 8px);
+                                    align-self: stretch;
+                                    border-radius: 16px;
+                                    background: var(--surface, #FFF);
+
+                                    >div:nth-child(1).frame {
+                                        @include mixins.column-top-left;
+                                        width: 28px;
+                                        height: 28px;
+                                        padding: var(--4, 4px);
+                                        border-radius: 100px;
+                                        background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+                                    }
+
+                                    >p:nth-child(2) {
+                                        @include text.m-body-medium;
+                                        flex: 1 0 0;
+                                        color: var(--on-surface, #222432);
+                                    }
+
+                                    >div:nth-child(3).status-badge {
+                                        @include mixins.row-center-left;
+                                        padding: var(--4, 4px) var(--12, 12px);
+                                        border-radius: var(--80, 80px);
+                                        background: var(--green-container, #E1F7ED);
+
+                                        >p:nth-child(1) {
+                                            @include text.m-body-medium;
+                                            color: var(--additional-key-colors-green, #09C068);
+                                        }
+                                    }
+                                }
+
+                                >div:nth-child(3).drew-cano {
+                                    @include mixins.row-center-left;
+                                    padding: 8px;
+                                    gap: var(--8, 8px);
+                                    align-self: stretch;
+                                    border-radius: 16px;
+                                    background: var(--background, #F3F4FB);
+
+                                    >div:nth-child(1).frame {
+                                        @include mixins.column-top-left;
+                                        width: 28px;
+                                        height: 28px;
+                                        padding: var(--4, 4px);
+                                        border-radius: 100px;
+                                        background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+                                    }
+
+                                    >p:nth-child(2) {
+                                        @include text.m-body-medium;
+                                        flex: 1 0 0;
+                                        color: var(--on-surface, #222432);
+                                    }
+
+                                    >div:nth-child(3).status-badge {
+                                        @include mixins.row-center-left;
+                                        padding: var(--4, 4px) var(--12, 12px);
+                                        border-radius: var(--80, 80px);
+                                        background: var(--aqua-container, #E7F6FF);
+
+                                        >p:nth-child(1) {
+                                            @include text.m-body-medium;
+                                            color: var(--additional-key-colors-aqua, #38B8FF);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    >rect:nth-child(2) {
+                        width: 440px;
+                        height: 290px;
+                        position: absolute;
+                        background: var(--overlay, linear-gradient(180deg, #F7F7FC 0%, rgba(247, 247, 252, 0.30) 100%));
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                >div:nth-child(2).block {
                     @include mixins.column-top-left;
                     height: 280px;
                     max-width: 440px;
@@ -166,7 +366,7 @@ section.core-services {
                     background: var(--surface, #FFF);
                     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
 
-                    >div:nth-child(1).frame {
+                    >div:nth-child(1).text {
                         @include mixins.column-center-left;
                         align-self: stretch;
                         border-radius: var(--12, 12px);
@@ -174,359 +374,60 @@ section.core-services {
                         >h4:nth-child(1) {
                             @include text.m-title-small;
                             align-self: stretch;
-                            color: var(--additional-key-colors-green, #09C068);
+                            color: var(--on-surface, #222432);
                         }
                     }
 
                     >div:nth-child(2).frame {
-                        @include mixins.row-top-left;
-                        align-self: stretch;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            min-width: 224px;
-                            gap: var(--4, 4px);
-                            flex: 1 0 0;
-
-                            >div:nth-child(1).byewind {
-                                @include mixins.row-center-left;
-                                padding: 8px;
-                                gap: var(--8, 8px);
-                                align-self: stretch;
-                                border-radius: 16px;
-                                background: var(--primary-container, #F5F8FE);
-
-                                >div:nth-child(1).frame {
-                                    @include mixins.column-top-left;
-                                    width: 28px;
-                                    height: 28px;
-                                    padding: var(--4, 4px);
-                                    border-radius: 100px;
-                                    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                                }
-
-                                >p:nth-child(2) {
-                                    @include text.m-body-medium;
-                                    flex: 1 0 0;
-                                    color: var(--on-surface, #222432);
-                                }
-
-                                >div:nth-child(3).status-badge {
-                                    @include mixins.row-center-left;
-                                    padding: var(--4, 4px) var(--12, 12px);
-                                    border-radius: var(--80, 80px);
-                                    background: var(--violet-container, #F3E2FC);
-
-                                    >p:nth-child(1) {
-                                        @include text.m-body-medium;
-                                        color: var(--additional-key-colors-violet, #9F10E3);
-                                    }
-                                }
-                            }
-
-                            >div:nth-child(2).natali-craig {
-                                @include mixins.row-center-left;
-                                padding: 8px;
-                                gap: var(--8, 8px);
-                                align-self: stretch;
-                                border-radius: 16px;
-                                background: var(--surface, #FFF);
-
-                                >div:nth-child(1).frame {
-                                    @include mixins.column-top-left;
-                                    width: 28px;
-                                    height: 28px;
-                                    padding: var(--4, 4px);
-                                    border-radius: 100px;
-                                    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                                }
-
-                                >p:nth-child(2) {
-                                    @include text.m-body-medium;
-                                    flex: 1 0 0;
-                                    color: var(--on-surface, #222432);
-                                }
-
-                                >div:nth-child(3).status-badge {
-                                    @include mixins.row-center-left;
-                                    padding: var(--4, 4px) var(--12, 12px);
-                                    border-radius: var(--80, 80px);
-                                    background: var(--green-container, #E1F7ED);
-
-                                    >p:nth-child(1) {
-                                        @include text.m-body-medium;
-                                        color: var(--additional-key-colors-green, #09C068);
-                                    }
-                                }
-                            }
-
-                            >div:nth-child(3).drew-cano {
-                                @include mixins.row-center-left;
-                                padding: 8px;
-                                gap: var(--8, 8px);
-                                align-self: stretch;
-                                border-radius: 16px;
-                                background: var(--background, #F3F4FB);
-
-                                >div:nth-child(1).frame {
-                                    @include mixins.column-top-left;
-                                    width: 28px;
-                                    height: 28px;
-                                    padding: var(--4, 4px);
-                                    border-radius: 100px;
-                                    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                                }
-
-                                >p:nth-child(2) {
-                                    @include text.m-body-medium;
-                                    flex: 1 0 0;
-                                    color: var(--on-surface, #222432);
-                                }
-
-                                >div:nth-child(3).status-badge {
-                                    @include mixins.row-center-left;
-                                    padding: var(--4, 4px) var(--12, 12px);
-                                    border-radius: var(--80, 80px);
-                                    background: var(--aqua-container, #E7F6FF);
-
-                                    >p:nth-child(1) {
-                                        @include text.m-body-medium;
-                                        color: var(--additional-key-colors-aqua, #38B8FF);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                >rect:nth-child(2) {
-                    width: 440px;
-                    height: 290px;
-                    position: absolute;
-                    background: var(--overlay, linear-gradient(180deg, #F7F7FC 0%, rgba(247, 247, 252, 0.30) 100%));
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            >div:nth-child(2).block {
-                @include mixins.column-top-left;
-                height: 280px;
-                max-width: 440px;
-                padding: 32px;
-                gap: 24px;
-                align-self: stretch;
-                border-radius: 12px;
-                background: var(--surface, #FFF);
-                box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
-
-                >div:nth-child(1).text {
-                    @include mixins.column-center-left;
-                    align-self: stretch;
-                    border-radius: var(--12, 12px);
-
-                    >h4:nth-child(1) {
-                        @include text.m-title-small;
-                        align-self: stretch;
-                        color: var(--on-surface, #222432);
-                    }
-                }
-
-                >div:nth-child(2).frame {
-                    @include mixins.column-top-left;
-                    gap: 4px;
-                    flex: 1 0 0;
-                    align-self: stretch;
-
-                    >div:nth-child(1).vertical-bars {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
+                        @include mixins.column-top-left;
+                        gap: 4px;
                         flex: 1 0 0;
                         align-self: stretch;
 
-                        >div:nth-child(1).vertical-bar {
+                        >div:nth-child(1).vertical-bars {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
                             flex: 1 0 0;
                             align-self: stretch;
-                        }
 
-                        >div:nth-child(2).vertical-bar {
-                            flex: 1 0 0;
-                            align-self: stretch;
-                        }
-
-                        >div:nth-child(3).vertical-bar {
-                            flex: 1 0 0;
-                            align-self: stretch;
-                        }
-
-                        >div:nth-child(4).vertical-bar {
-                            flex: 1 0 0;
-                            align-self: stretch;
-                        }
-
-                        >div:nth-child(5).vertical-bar {
-                            @include mixins.column-center-center;
-                            padding: 0 7.833px;
-                            gap: 14.75px;
-                            flex: 1 0 0;
-                            align-self: stretch;
-                        }
-
-                        >div:nth-child(6).vertical-bar {
-                            flex: 1 0 0;
-                            align-self: stretch;
-                        }
-                    }
-
-                    >div:nth-child(2).bottom-text {
-                        @include mixins.row-top-left;
-                        align-self: stretch;
-
-                        >div:nth-child(1).text-1 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(1).vertical-bar {
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
 
-                        >div:nth-child(2).text-2 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(2).vertical-bar {
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
 
-                        >div:nth-child(3).text-3 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(3).vertical-bar {
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
 
-                        >div:nth-child(4).text-4 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(4).vertical-bar {
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
 
-                        >div:nth-child(5).text-5 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(5).vertical-bar {
+                                @include mixins.column-center-center;
+                                padding: 0 7.833px;
+                                gap: 14.75px;
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
 
-                        >div:nth-child(6).text-6 {
-                            @include mixins.column-center-left;
-                            flex: 1 0 0;
-                            border-radius: var(--12, 12px);
-
-                            >label:nth-child(1) {
-                                @include text.m-label-small;
+                            >div:nth-child(6).vertical-bar {
+                                flex: 1 0 0;
                                 align-self: stretch;
-                                color: var(--on-surface, #222432);
-                                text-align: center;
                             }
-                        }
-                    }
-                }
-            }
-
-            >div:nth-child(3).block {
-                @include mixins.column-top-left;
-                max-width: 440px;
-                padding-bottom: 10px;
-                gap: 10px;
-                align-self: stretch;
-                position: relative;
-
-                >div:nth-child(1).block {
-                    @include mixins.column-top-left;
-                    height: 280px;
-                    max-width: 440px;
-                    padding: 32px;
-                    gap: 24px;
-                    align-self: stretch;
-                    border-radius: 12px;
-                    background: var(--surface, #FFF);
-                    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
-
-                    >h4:nth-child(1) {
-                        @include mixins.row-center-left;
-                        width: 329px;
-                        height: 24px;
-                        align-content: center;
-                        gap: 16px var(--16, 16px);
-                        flex-shrink: 0;
-                        flex-wrap: wrap;
-                        border-radius: var(--12, 12px);
-
-                        >span:nth-child(1) {
-                            @include text.m-title-small;
-                            width: 46px;
-                            flex-shrink: 0;
-                            color: var(--additional-key-colors-violet, #9F10E3);
-                        }
-
-                        >span:nth-child(2) {
-                            @include text.m-title-small;
-                            color: rgba(0, 0, 0, 0.40);
-                        }
-
-                        >span:nth-child(3) {
-                            @include text.m-title-small;
-                            color: rgba(0, 0, 0, 0.40);
-                        }
-                    }
-
-                    >div:nth-child(2).chart {
-                        @include mixins.column-center-left;
-                        gap: var(--16, 16px);
-                        flex: 1 0 0;
-                        align-self: stretch;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.row-center-center;
-                            gap: var(--16, 0);
-                            flex: 1 0 0;
-                            align-self: stretch;
                         }
 
                         >div:nth-child(2).bottom-text {
-                            @include mixins.row-center-left;
-                            width: 329px;
+                            @include mixins.row-top-left;
+                            align-self: stretch;
 
                             >div:nth-child(1).text-1 {
                                 @include mixins.column-center-left;
@@ -536,7 +437,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -549,7 +450,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -562,7 +463,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -575,7 +476,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -588,7 +489,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -601,7 +502,7 @@ section.core-services {
                                 >label:nth-child(1) {
                                     @include text.m-label-small;
                                     align-self: stretch;
-                                    color: #000;
+                                    color: var(--on-surface, #222432);
                                     text-align: center;
                                 }
                             }
@@ -609,975 +510,867 @@ section.core-services {
                     }
                 }
 
-                >rect:nth-child(2) {
-                    transform: rotate(180deg);
-                    width: 440px;
-                    height: 290px;
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    background: var(--overlay, linear-gradient(180deg, #F7F7FC 0%, rgba(247, 247, 252, 0.30) 100%));
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-}
-
-/*----- Competitive Advantages -----*/
-
-section.competitive-advantages {
-    @include mixins.row-center-center;
-    gap: 10px;
-    align-self: stretch;
-    background: var(--black, #1A1C28);
-
-
-
-    >div:nth-child(1).container {
-        @include mixins.column-top-left;
-        max-width: 1200px;
-        padding: 120px 0 160px 0;
-        gap: 60px;
-        flex: 1 0 0;
-
-
-
-        >div:nth-child(1).frame {
-            @include mixins.column-top-center;
-            max-width: 600px;
-            gap: 16px;
-            align-self: stretch;
-
-
-
-            >div:nth-child(1).frame {
-                @include mixins.row-center-left;
-                gap: 8px;
-                align-self: stretch;
-
-
-
-                >div:nth-child(1).competitive {
-                    @include text.m-headline-large;
-                    color: var(--white, #FFF);
-                }
-
-
-
-                >div:nth-child(2).advantages {
-                    @include text.m-headline-large;
-                    color: var(--primary, #0050F1);
-                }
-            }
-
-
-
-            >div:nth-child(2).p1 {
-                @include text.m-body-medium;
-                align-self: stretch;
-                color: var(--white, #FFF);
-                opacity: 0.5;
-            }
-        }
-
-
-
-        >div:nth-child(2).frame {
-            @include mixins.row-top-left;
-            gap: 16px;
-            align-self: stretch;
-
-
-
-            >div:nth-child(1).frame {
-                @include mixins.column-top-left;
-                padding: 28px;
-                gap: 20px;
-                flex: 1 0 0;
-                align-self: stretch;
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.04);
-
-
-
-                >div:nth-child(1).frame {
-                    width: 72px;
-                    height: 72px;
-                    aspect-ratio: 1/1;
-                    fill: rgba(255, 255, 255, 0.00);
-                }
-
-
-
-                >div:nth-child(2).frame {
+                >div:nth-child(3).block {
                     @include mixins.column-top-left;
-                    gap: 8px;
+                    max-width: 440px;
+                    padding-bottom: 10px;
+                    gap: 10px;
                     align-self: stretch;
+                    position: relative;
 
-
-
-                    >div:nth-child(1).title {
-                        @include text.m-title-small;
+                    >div:nth-child(1).block {
+                        @include mixins.column-top-left;
+                        height: 280px;
+                        max-width: 440px;
+                        padding: 32px;
+                        gap: 24px;
                         align-self: stretch;
-                        color: var(--white, #FFF);
+                        border-radius: 12px;
+                        background: var(--surface, #FFF);
+                        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+
+                        >h4:nth-child(1) {
+                            @include mixins.row-center-left;
+                            width: 329px;
+                            height: 24px;
+                            align-content: center;
+                            gap: 16px var(--16, 16px);
+                            flex-shrink: 0;
+                            flex-wrap: wrap;
+                            border-radius: var(--12, 12px);
+
+                            >span:nth-child(1) {
+                                @include text.m-title-small;
+                                width: 46px;
+                                flex-shrink: 0;
+                                color: var(--additional-key-colors-violet, #9F10E3);
+                            }
+
+                            >span:nth-child(2) {
+                                @include text.m-title-small;
+                                color: rgba(0, 0, 0, 0.40);
+                            }
+
+                            >span:nth-child(3) {
+                                @include text.m-title-small;
+                                color: rgba(0, 0, 0, 0.40);
+                            }
+                        }
+
+                        >div:nth-child(2).chart {
+                            @include mixins.column-center-left;
+                            gap: var(--16, 16px);
+                            flex: 1 0 0;
+                            align-self: stretch;
+
+                            >div:nth-child(1).frame {
+                                @include mixins.row-center-center;
+                                gap: var(--16, 0);
+                                flex: 1 0 0;
+                                align-self: stretch;
+                            }
+
+                            >div:nth-child(2).bottom-text {
+                                @include mixins.row-center-left;
+                                width: 329px;
+
+                                >div:nth-child(1).text-1 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+
+                                >div:nth-child(2).text-2 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+
+                                >div:nth-child(3).text-3 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+
+                                >div:nth-child(4).text-4 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+
+                                >div:nth-child(5).text-5 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+
+                                >div:nth-child(6).text-6 {
+                                    @include mixins.column-center-left;
+                                    flex: 1 0 0;
+                                    border-radius: var(--12, 12px);
+
+                                    >label:nth-child(1) {
+                                        @include text.m-label-small;
+                                        align-self: stretch;
+                                        color: #000;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
                     }
 
-
-
-                    >div:nth-child(2).dscr {
-                        @include text.m-body-medium;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                        opacity: 0.5;
-                    }
-                }
-            }
-
-
-
-            >div:nth-child(2).frame {
-                @include mixins.column-top-left;
-                padding: 28px;
-                gap: 20px;
-                flex: 1 0 0;
-                align-self: stretch;
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.10);
-
-
-
-                >div:nth-child(1).iconlyglassdiscovery {
-                    @include mixins.row-center-center;
-                    width: 72px;
-                    height: 72px;
-                    padding: 8.971px;
-                    aspect-ratio: 1/1;
-                    background: rgba(255, 255, 255, 0.01);
-                }
-
-
-
-                >div:nth-child(2).frame {
-                    @include mixins.column-top-left;
-                    gap: 8px;
-                    align-self: stretch;
-
-
-
-                    >div:nth-child(1).title {
-                        @include text.m-title-small;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                    }
-
-
-
-                    >div:nth-child(2).dscr {
-                        @include text.m-body-medium;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                        opacity: 0.5;
-                    }
-                }
-            }
-
-
-
-            >div:nth-child(3).frame {
-                @include mixins.column-top-left;
-                padding: 28px;
-                gap: 20px;
-                flex: 1 0 0;
-                align-self: stretch;
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.04);
-
-
-
-                >div:nth-child(1).iconlyglassmenu {
-                    @include mixins.row-center-center;
-                    width: 72px;
-                    height: 72px;
-                    padding: 13.399px 8.141px;
-                    aspect-ratio: 1/1;
-                    background: rgba(255, 255, 255, 0.01);
-                }
-
-
-
-                >div:nth-child(2).frame {
-                    @include mixins.column-top-left;
-                    gap: 8px;
-                    align-self: stretch;
-
-
-
-                    >div:nth-child(1).title {
-                        @include text.m-title-small;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                    }
-
-
-
-                    >div:nth-child(2).dscr {
-                        @include text.m-body-medium;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                        opacity: 0.5;
-                    }
-                }
-            }
-
-
-
-            >div:nth-child(4).frame {
-                @include mixins.column-top-left;
-                padding: 28px;
-                gap: 20px;
-                flex: 1 0 0;
-                align-self: stretch;
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.04);
-
-
-
-                >div:nth-child(1).iconlyglasslock {
-                    @include mixins.row-center-center;
-                    width: 72px;
-                    height: 72px;
-                    padding: 8.682px 6.941px;
-                    aspect-ratio: 1/1;
-                    background: rgba(255, 255, 255, 0.01);
-                }
-
-
-
-                >div:nth-child(2).frame {
-                    @include mixins.column-top-left;
-                    gap: 8px;
-                    align-self: stretch;
-
-
-
-                    >div:nth-child(1).title {
-                        @include text.m-title-small;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                    }
-
-
-
-                    >div:nth-child(2).dscr {
-                        @include text.m-body-medium;
-                        align-self: stretch;
-                        color: var(--white, #FFF);
-                        opacity: 0.5;
+                    >rect:nth-child(2) {
+                        transform: rotate(180deg);
+                        width: 440px;
+                        height: 290px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        background: var(--overlay, linear-gradient(180deg, #F7F7FC 0%, rgba(247, 247, 252, 0.30) 100%));
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
         }
     }
-}
 
-
-
-
-
-
-/*----- Collaborating Partners -----*/
-
-section.collaborating-partners {
-    @include mixins.column-center-center;
-    gap: 60px;
-    align-self: stretch;
-    background: var(--surface, #FFF);
-
-
-
-    >div:nth-child(1).container {
-        @include mixins.column-top-left;
-        max-width: 1200px;
-        padding: 120px 0;
-        gap: 120px;
+    >section.competitive-advantages {
+        @include mixins.row-center-center;
+        gap: 10px;
         align-self: stretch;
+        background: var(--black, #1A1C28);
 
-
-
-        >div:nth-child(1).frame {
+        >div:nth-child(1).container {
             @include mixins.column-top-left;
+            max-width: 1200px;
+            padding: 120px 0 160px 0;
             gap: 60px;
-            align-self: stretch;
-
-
+            flex: 1 0 0;
 
             >div:nth-child(1).frame {
                 @include mixins.column-top-center;
+                max-width: 600px;
                 gap: 16px;
                 align-self: stretch;
 
-
-
-                >div:nth-child(1).frame {
+                >h2:nth-child(1) {
                     @include mixins.row-center-left;
                     gap: 8px;
                     align-self: stretch;
 
-
-
-                    >div:nth-child(1).collaborating {
+                    >span:nth-child(1) {
                         @include text.m-headline-large;
-                        color: var(--on-surface, #222432);
+                        color: var(--white, #FFF);
                     }
 
-
-
-                    >div:nth-child(2).partners {
+                    >span:nth-child(2) {
                         @include text.m-headline-large;
                         color: var(--primary, #0050F1);
                     }
                 }
 
-
-
-                >div:nth-child(2).p1 {
+                >p:nth-child(2) {
                     @include text.m-body-medium;
                     align-self: stretch;
-                    color: var(--on-surface-variant, #7A7C84);
+                    color: var(--white, #FFF);
                     opacity: 0.5;
                 }
             }
-
-
 
             >div:nth-child(2).frame {
                 @include mixins.row-top-left;
-                gap: 24px;
+                gap: 16px;
                 align-self: stretch;
 
-
-
-                >div:nth-child(1).card-d {
-                    @include mixins.column-top-center;
-                    padding: 40px 28px;
-                    gap: 28px;
+                >div:nth-child(1).frame {
+                    @include mixins.column-top-left;
+                    padding: 28px;
+                    gap: 20px;
                     flex: 1 0 0;
                     align-self: stretch;
                     border-radius: 20px;
-                    background: var(--surface-variant, #FAFBFD);
+                    background: rgba(255, 255, 255, 0.04);
 
+                    >div:nth-child(1).frame {
+                        width: 72px;
+                        height: 72px;
+                        aspect-ratio: 1/1;
+                        fill: rgba(255, 255, 255, 0.00);
+                    }
 
+                    >div:nth-child(2).frame {
+                        @include mixins.column-top-left;
+                        gap: 8px;
+                        align-self: stretch;
 
-                    >div:nth-child(1).partners {
+                        >h4:nth-child(1) {
+                            @include text.m-title-small;
+                            align-self: stretch;
+                            color: var(--white, #FFF);
+                        }
+
+                        >p:nth-child(2) {
+                            @include text.m-body-medium;
+                            align-self: stretch;
+                            color: var(--white, #FFF);
+                            opacity: 0.5;
+                        }
+                    }
+                }
+
+                >div:nth-child(2).frame {
+                    @include mixins.column-top-left;
+                    padding: 28px;
+                    gap: 20px;
+                    flex: 1 0 0;
+                    align-self: stretch;
+                    border-radius: 20px;
+                    background: rgba(255, 255, 255, 0.10);
+
+                    >div:nth-child(1).iconly-glass-discovery {
                         @include mixins.row-center-center;
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 100px;
-                        background: #FFF;
-
-
-
-                        >img:nth-child(1) {
-                            width: 60px;
-                            height: 60px;
-                            flex-shrink: 0;
-                            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                        }
+                        width: 72px;
+                        height: 72px;
+                        padding: 8.971px;
+                        aspect-ratio: 1/1;
+                        background: rgba(255, 255, 255, 0.01);
                     }
 
-
-
-                    >div:nth-child(2).texts {
+                    >div:nth-child(2).frame {
                         @include mixins.column-top-left;
-                        gap: 4px;
+                        gap: 8px;
                         align-self: stretch;
 
-
-
-                        >div:nth-child(1).title {
+                        >h4:nth-child(1) {
                             @include text.m-title-small;
                             align-self: stretch;
-                            color: var(--on-surface, #222432);
-                            text-align: center;
+                            color: var(--white, #FFF);
                         }
 
-
-
-                        >div:nth-child(2).dscr {
+                        >p:nth-child(2) {
                             @include text.m-body-medium;
                             align-self: stretch;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-align: center;
+                            color: var(--white, #FFF);
                             opacity: 0.5;
                         }
                     }
                 }
 
-
-
-                >div:nth-child(2).card-d {
-                    @include mixins.column-top-center;
-                    padding: 40px 28px;
-                    gap: 28px;
+                >div:nth-child(3).frame {
+                    @include mixins.column-top-left;
+                    padding: 28px;
+                    gap: 20px;
                     flex: 1 0 0;
                     align-self: stretch;
                     border-radius: 20px;
-                    background: var(--surface-variant, #FAFBFD);
+                    background: rgba(255, 255, 255, 0.04);
 
-
-
-                    >div:nth-child(1).partners {
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 100px;
-                        background: var(--outline-variant, #EBECF3);
+                    >div:nth-child(1).iconly-glass-menu {
+                        @include mixins.row-center-center;
+                        width: 72px;
+                        height: 72px;
+                        padding: 13.399px 8.141px;
+                        aspect-ratio: 1/1;
+                        background: rgba(255, 255, 255, 0.01);
                     }
 
-
-
-                    >div:nth-child(2).texts {
+                    >div:nth-child(2).frame {
                         @include mixins.column-top-left;
-                        gap: 4px;
+                        gap: 8px;
                         align-self: stretch;
 
-
-
-                        >div:nth-child(1).title {
+                        >h4:nth-child(1) {
                             @include text.m-title-small;
                             align-self: stretch;
-                            color: var(--on-surface, #222432);
-                            text-align: center;
+                            color: var(--white, #FFF);
                         }
 
-
-
-                        >div:nth-child(2).dscr {
+                        >p:nth-child(2) {
                             @include text.m-body-medium;
                             align-self: stretch;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-align: center;
+                            color: var(--white, #FFF);
                             opacity: 0.5;
                         }
                     }
                 }
 
-
-
-                >div:nth-child(3).card-d {
-                    @include mixins.column-top-center;
-                    padding: 40px 28px;
-                    gap: 28px;
+                >div:nth-child(4).frame {
+                    @include mixins.column-top-left;
+                    padding: 28px;
+                    gap: 20px;
                     flex: 1 0 0;
                     align-self: stretch;
                     border-radius: 20px;
-                    background: var(--surface-variant, #FAFBFD);
+                    background: rgba(255, 255, 255, 0.04);
 
-
-
-                    >div:nth-child(1).partners {
-                        width: 60px;
-                        height: 60px;
-
-
-
-                        >div:nth-child(1).vector {
-                            width: 54.903px;
-                            height: 60px;
-                            flex-shrink: 0;
-                            fill: #29BCED;
-                        }
+                    >div:nth-child(1).iconly-glass-lock {
+                        @include mixins.row-center-center;
+                        width: 72px;
+                        height: 72px;
+                        padding: 8.682px 6.941px;
+                        aspect-ratio: 1/1;
+                        background: rgba(255, 255, 255, 0.01);
                     }
 
-
-
-                    >div:nth-child(2).texts {
+                    >div:nth-child(2).frame {
                         @include mixins.column-top-left;
-                        gap: 4px;
+                        gap: 8px;
                         align-self: stretch;
 
-
-
-                        >div:nth-child(1).title {
+                        >h4:nth-child(1) {
                             @include text.m-title-small;
                             align-self: stretch;
-                            color: var(--on-surface, #222432);
-                            text-align: center;
+                            color: var(--white, #FFF);
                         }
 
-
-
-                        >div:nth-child(2).dscr {
+                        >p:nth-child(2) {
                             @include text.m-body-medium;
                             align-self: stretch;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-align: center;
-                            opacity: 0.5;
-                        }
-                    }
-                }
-
-
-
-                >div:nth-child(4).card-d {
-                    @include mixins.column-top-center;
-                    padding: 40px 28px;
-                    gap: 28px;
-                    flex: 1 0 0;
-                    align-self: stretch;
-                    border-radius: 20px;
-                    background: var(--surface-variant, #FAFBFD);
-
-
-
-                    >div:nth-child(1).partners {
-                        width: 60px;
-                        height: 60px;
-                        border-radius: 100px;
-                        background: var(--outline-variant, #EBECF3);
-                    }
-
-
-
-                    >div:nth-child(2).texts {
-                        @include mixins.column-top-left;
-                        gap: 4px;
-                        align-self: stretch;
-
-
-
-                        >div:nth-child(1).title {
-                            @include text.m-title-small;
-                            align-self: stretch;
-                            color: var(--on-surface, #222432);
-                            text-align: center;
-                        }
-
-
-
-                        >div:nth-child(2).dscr {
-                            @include text.m-body-medium;
-                            align-self: stretch;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-align: center;
+                            color: var(--white, #FFF);
                             opacity: 0.5;
                         }
                     }
                 }
             }
         }
+    }
 
+    >section.collaborating-partners {
+        @include mixins.column-center-center;
+        gap: 60px;
+        align-self: stretch;
+        background: var(--surface, #FFF);
 
-
-        >div:nth-child(2).frame {
+        >div:nth-child(1).container {
             @include mixins.column-top-left;
-            gap: 40px;
+            max-width: 1200px;
+            padding: 120px 0;
+            gap: 120px;
             align-self: stretch;
 
-
-
             >div:nth-child(1).frame {
-                @include mixins.column-top-center;
-                gap: 16px;
+                @include mixins.column-top-left;
+                gap: 60px;
                 align-self: stretch;
 
-
-
                 >div:nth-child(1).frame {
-                    @include mixins.row-center-left;
-                    gap: 8px;
+                    @include mixins.column-top-center;
+                    gap: 16px;
                     align-self: stretch;
 
+                    >h2:nth-child(1) {
+                        @include mixins.row-center-left;
+                        gap: 8px;
+                        align-self: stretch;
 
+                        >span:nth-child(1) {
+                            @include text.m-headline-large;
+                            color: var(--on-surface, #222432);
+                        }
 
-                    >div:nth-child(1).trusted-by {
-                        @include text.m-headline-large;
-                        color: var(--on-surface, #222432);
+                        >span:nth-child(2) {
+                            @include text.m-headline-large;
+                            color: var(--primary, #0050F1);
+                        }
                     }
 
-
-
-                    >div:nth-child(2).clients {
-                        @include text.m-headline-large;
-                        color: var(--primary, #0050F1);
+                    >p:nth-child(2) {
+                        @include text.m-body-medium;
+                        align-self: stretch;
+                        color: var(--on-surface-variant, #7A7C84);
+                        opacity: 0.5;
                     }
                 }
 
-
-
-                >div:nth-child(2).p1 {
-                    @include text.m-body-medium;
+                >div:nth-child(2).frame {
+                    @include mixins.row-top-left;
+                    gap: 24px;
                     align-self: stretch;
-                    color: var(--on-surface-variant, #7A7C84);
-                    opacity: 0.5;
+
+                    >div:nth-child(1).card-d {
+                        @include mixins.column-top-center;
+                        padding: 40px 28px;
+                        gap: 28px;
+                        flex: 1 0 0;
+                        align-self: stretch;
+                        border-radius: 20px;
+                        background: var(--surface-variant, #F7F7FC);
+
+                        >div:nth-child(2).texts {
+                            @include mixins.column-top-left;
+                            gap: 4px;
+                            align-self: stretch;
+
+                            >h4:nth-child(1) {
+                                @include text.m-title-small;
+                                align-self: stretch;
+                                color: var(--on-surface, #222432);
+                                text-align: center;
+                            }
+
+                            >p:nth-child(2) {
+                                @include text.m-body-medium;
+                                align-self: stretch;
+                                color: var(--on-surface-variant, #7A7C84);
+                                text-align: center;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+
+                    >div:nth-child(2).card-d {
+                        @include mixins.column-top-center;
+                        padding: 40px 28px;
+                        gap: 28px;
+                        flex: 1 0 0;
+                        align-self: stretch;
+                        border-radius: 20px;
+                        background: var(--surface-variant, #F7F7FC);
+
+                        >div:nth-child(2).texts {
+                            @include mixins.column-top-left;
+                            gap: 4px;
+                            align-self: stretch;
+
+                            >h4:nth-child(1) {
+                                @include text.m-title-small;
+                                align-self: stretch;
+                                color: var(--on-surface, #222432);
+                                text-align: center;
+                            }
+
+                            >p:nth-child(2) {
+                                @include text.m-body-medium;
+                                align-self: stretch;
+                                color: var(--on-surface-variant, #7A7C84);
+                                text-align: center;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+
+                    >div:nth-child(3).card-d {
+                        @include mixins.column-top-center;
+                        padding: 40px 28px;
+                        gap: 28px;
+                        flex: 1 0 0;
+                        align-self: stretch;
+                        border-radius: 20px;
+                        background: var(--surface-variant, #F7F7FC);
+
+                        >div:nth-child(2).texts {
+                            @include mixins.column-top-left;
+                            gap: 4px;
+                            align-self: stretch;
+
+                            >h4:nth-child(1) {
+                                @include text.m-title-small;
+                                align-self: stretch;
+                                color: var(--on-surface, #222432);
+                                text-align: center;
+                            }
+
+                            >p:nth-child(2) {
+                                @include text.m-body-medium;
+                                align-self: stretch;
+                                color: var(--on-surface-variant, #7A7C84);
+                                text-align: center;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+
+                    >div:nth-child(4).card-d {
+                        @include mixins.column-top-center;
+                        padding: 40px 28px;
+                        gap: 28px;
+                        flex: 1 0 0;
+                        align-self: stretch;
+                        border-radius: 20px;
+                        background: var(--surface-variant, #F7F7FC);
+
+                        >div:nth-child(2).texts {
+                            @include mixins.column-top-left;
+                            gap: 4px;
+                            align-self: stretch;
+
+                            >h4:nth-child(1) {
+                                @include text.m-title-small;
+                                align-self: stretch;
+                                color: var(--on-surface, #222432);
+                                text-align: center;
+                            }
+
+                            >p:nth-child(2) {
+                                @include text.m-body-medium;
+                                align-self: stretch;
+                                color: var(--on-surface-variant, #7A7C84);
+                                text-align: center;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
                 }
             }
 
-
-
             >div:nth-child(2).frame {
                 @include mixins.column-top-left;
-                gap: 10px;
+                gap: 40px;
                 align-self: stretch;
-                position: relative;
-
-
 
                 >div:nth-child(1).frame {
-                    width: 1200px;
-                    height: 104px;
-                    position: absolute;
-                    left: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    right: unset;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    bottom: unset;
-                    width: 1200px;
-                    height: 104px;
-                }
-
-
-
-                >div:nth-child(2).cards {
-                    display: flex;
-                    padding: 20px 40px;
-                    justify-content: space-between;
-                    align-items: center;
+                    @include mixins.column-top-center;
+                    gap: 16px;
                     align-self: stretch;
 
-
-
-                    >div:nth-child(1).card-b {
+                    >h2:nth-child(1) {
                         @include mixins.row-center-left;
-                        width: 97.999px;
-                        height: 64px;
-                        padding: 0 12px;
-                        gap: 12px;
-                        border-radius: 8px;
+                        gap: 8px;
+                        align-self: stretch;
 
+                        >span:nth-child(1) {
+                            @include text.m-headline-large;
+                            color: var(--on-surface, #222432);
+                        }
 
+                        >span:nth-child(2) {
+                            @include text.m-headline-large;
+                            color: var(--primary, #0050F1);
+                        }
+                    }
 
-                        >div:nth-child(1).group {
-                            width: 73.999px;
-                            height: 44px;
-                            flex-shrink: 0;
-                            aspect-ratio: 37/22;
-                            opacity: 0.6;
+                    >p:nth-child(2) {
+                        @include text.m-body-medium;
+                        align-self: stretch;
+                        color: var(--on-surface-variant, #7A7C84);
+                        opacity: 0.5;
+                    }
+                }
 
+                >div:nth-child(2).frame {
+                    @include mixins.column-top-left;
+                    gap: 10px;
+                    align-self: stretch;
+                    position: relative;
 
+                    >div:nth-child(1).frame {
+                        width: 1200px;
+                        height: 104px;
+                        position: absolute;
+                        left: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        right: unset;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        bottom: unset;
+                        width: 1200px;
+                        height: 104px;
+                    }
 
-                            >div:nth-child(1).green {
+                    >div:nth-child(2).cards {
+                        display: flex;
+                        padding: 20px 40px;
+                        justify-content: space-between;
+                        align-items: center;
+                        align-self: stretch;
+
+                        >div:nth-child(1).card-b {
+                            @include mixins.row-center-left;
+                            width: 97.999px;
+                            height: 64px;
+                            padding: 0 12px;
+                            gap: 12px;
+                            border-radius: 8px;
+
+                            >div:nth-child(1).group {
                                 width: 73.999px;
-                                height: 40.925px;
-                                flex-shrink: 0;
-
-
-
-                                >div:nth-child(1).vector {
-                                    width: 13.717px;
-                                    height: 13.716px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(2).vector {
-                                    width: 13.697px;
-                                    height: 13.697px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(3).vector {
-                                    width: 16.354px;
-                                    height: 16.33px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(4).vector {
-                                    width: 5.487px;
-                                    height: 5.487px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(5).vector {
-                                    width: 5.487px;
-                                    height: 5.487px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-                            }
-
-
-
-                            >div:nth-child(2).violet {
-                                width: 57.473px;
                                 height: 44px;
                                 flex-shrink: 0;
+                                aspect-ratio: 37/22;
+                                opacity: 0.6;
 
-
-
-                                >div:nth-child(1).vector {
-                                    width: 5.487px;
-                                    height: 5.487px;
+                                >div:nth-child(1).green {
+                                    width: 73.999px;
+                                    height: 40.925px;
                                     flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
+
+                                    >div:nth-child(1).vector {
+                                        width: 13.717px;
+                                        height: 13.716px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
+
+                                    >div:nth-child(2).vector {
+                                        width: 13.697px;
+                                        height: 13.697px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
+
+                                    >div:nth-child(3).vector {
+                                        width: 16.354px;
+                                        height: 16.33px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
+
+                                    >div:nth-child(4).vector {
+                                        width: 5.487px;
+                                        height: 5.487px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
+
+                                    >div:nth-child(5).vector {
+                                        width: 5.487px;
+                                        height: 5.487px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
                                 }
 
-
-
-                                >div:nth-child(2).vector {
-                                    width: 13.992px;
-                                    height: 13.413px;
+                                >div:nth-child(2).violet {
+                                    width: 57.473px;
+                                    height: 44px;
                                     flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
 
+                                    >div:nth-child(1).vector {
+                                        width: 5.487px;
+                                        height: 5.487px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(2).vector {
+                                        width: 13.992px;
+                                        height: 13.413px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
-                                >div:nth-child(3).vector {
-                                    width: 4.335px;
-                                    height: 17.252px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
+                                    >div:nth-child(3).vector {
+                                        width: 4.335px;
+                                        height: 17.252px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(4).vector {
+                                        width: 4.335px;
+                                        height: 14.701px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(5).vector {
+                                        width: 14.053px;
+                                        height: 13.412px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
-                                >div:nth-child(4).vector {
-                                    width: 4.335px;
-                                    height: 14.701px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
+                                    >div:nth-child(6).vector {
+                                        width: 14.208px;
+                                        height: 13.407px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(7).vector {
+                                        width: 13.598px;
+                                        height: 13.596px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(8).vector {
+                                        width: 9.012px;
+                                        height: 9.011px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
-                                >div:nth-child(5).vector {
-                                    width: 14.053px;
-                                    height: 13.412px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
+                                    >div:nth-child(9).vector {
+                                        width: 11.364px;
+                                        height: 7.803px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(10).vector {
+                                        width: 7.927px;
+                                        height: 7.925px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(11).vector {
+                                        width: 7.901px;
+                                        height: 9.706px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
-                                >div:nth-child(6).vector {
-                                    width: 14.208px;
-                                    height: 13.407px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
+                                    >div:nth-child(12).vector {
+                                        width: 1.616px;
+                                        height: 10.084px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
+                                    >div:nth-child(13).vector {
+                                        width: 0.972px;
+                                        height: 9.504px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
 
-
-                                >div:nth-child(7).vector {
-                                    width: 13.598px;
-                                    height: 13.596px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(8).vector {
-                                    width: 9.012px;
-                                    height: 9.011px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(9).vector {
-                                    width: 11.364px;
-                                    height: 7.803px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(10).vector {
-                                    width: 7.927px;
-                                    height: 7.925px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(11).vector {
-                                    width: 7.901px;
-                                    height: 9.706px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(12).vector {
-                                    width: 1.616px;
-                                    height: 10.084px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(13).vector {
-                                    width: 0.972px;
-                                    height: 9.504px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
-                                }
-
-
-
-                                >div:nth-child(14).vector {
-                                    width: 7.844px;
-                                    height: 7.985px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
+                                    >div:nth-child(14).vector {
+                                        width: 7.844px;
+                                        height: 7.985px;
+                                        flex-shrink: 0;
+                                        fill: var(--on-surface-variant, #7A7C84);
+                                    }
                                 }
                             }
                         }
-                    }
 
+                        >div:nth-child(2).card-b {
+                            @include mixins.row-center-left;
+                            width: 215px;
+                            height: 64px;
+                            padding: 0 12px;
+                            gap: 12px;
+                            border-radius: 8px;
 
-
-                    >div:nth-child(2).card-b {
-                        @include mixins.row-center-left;
-                        width: 215px;
-                        height: 64px;
-                        padding: 0 12px;
-                        gap: 12px;
-                        border-radius: 8px;
-
-
-
-                        >div:nth-child(1).frame {
-                            width: 191px;
-                            height: 36px;
-                            flex-shrink: 0;
-                            aspect-ratio: 191/36;
-                            opacity: 0.6;
+                            >div:nth-child(1).frame {
+                                width: 191px;
+                                height: 36px;
+                                flex-shrink: 0;
+                                aspect-ratio: 191/36;
+                                opacity: 0.6;
+                            }
                         }
-                    }
 
+                        >div:nth-child(3).card-b {
+                            @include mixins.row-center-left;
+                            width: 251px;
+                            height: 64px;
+                            padding: 0 12px;
+                            gap: 12px;
+                            border-radius: 8px;
 
-
-                    >div:nth-child(3).card-b {
-                        @include mixins.row-center-left;
-                        width: 251px;
-                        height: 64px;
-                        padding: 0 12px;
-                        gap: 12px;
-                        border-radius: 8px;
-
-
-
-                        >div:nth-child(1).frame {
-                            width: 227px;
-                            height: 32px;
-                            flex-shrink: 0;
-                            aspect-ratio: 227/32;
-                            opacity: 0.6;
+                            >div:nth-child(1).frame {
+                                width: 227px;
+                                height: 32px;
+                                flex-shrink: 0;
+                                aspect-ratio: 227/32;
+                                opacity: 0.6;
+                            }
                         }
-                    }
 
+                        >div:nth-child(4).card-b {
+                            @include mixins.row-center-left;
+                            width: 134px;
+                            height: 64px;
+                            padding: 0 12px;
+                            gap: 12px;
+                            border-radius: 8px;
 
-
-                    >div:nth-child(4).card-b {
-                        @include mixins.row-center-left;
-                        width: 134px;
-                        height: 64px;
-                        padding: 0 12px;
-                        gap: 12px;
-                        border-radius: 8px;
-
-
-
-                        >div:nth-child(1).frame-26086169 {
-                            width: 110px;
-                            height: 44px;
-                            flex-shrink: 0;
-                            aspect-ratio: 5/2;
-                            opacity: 0.6;
+                            >div:nth-child(1).frame-26086169 {
+                                width: 110px;
+                                height: 44px;
+                                flex-shrink: 0;
+                                aspect-ratio: 5/2;
+                                opacity: 0.6;
+                            }
                         }
-                    }
 
-
-
-                    >div:nth-child(5).card-b {
-                        @include mixins.row-center-left;
-                        width: 106.011px;
-                        height: 64px;
-                        padding: 0 12px;
-                        gap: 12px;
-                        border-radius: 8px;
-
-
-
-                        >div:nth-child(1).group {
-                            width: 82.011px;
-                            height: 40px;
-                            flex-shrink: 0;
-                            aspect-ratio: 82.01/40.00;
-                            opacity: 0.6;
-
-
+                        >div:nth-child(5).card-b {
+                            @include mixins.row-center-left;
+                            width: 106.011px;
+                            height: 64px;
+                            padding: 0 12px;
+                            gap: 12px;
+                            border-radius: 8px;
 
                             >div:nth-child(1).group {
                                 width: 82.011px;
                                 height: 40px;
                                 flex-shrink: 0;
-
-
+                                aspect-ratio: 82.01/40.00;
+                                opacity: 0.6;
 
                                 >div:nth-child(1).group {
-                                    width: 56.549px;
-                                    height: 27.114px;
+                                    width: 82.011px;
+                                    height: 40px;
                                     flex-shrink: 0;
 
-
-
-                                    >div:nth-child(1).vector {
-                                        width: 35.305px;
-                                        height: 20.599px;
+                                    >div:nth-child(1).group {
+                                        width: 56.549px;
+                                        height: 27.114px;
                                         flex-shrink: 0;
-                                        fill: var(--on-surface-variant, #7A7C84);
+
+                                        >div:nth-child(1).vector {
+                                            width: 35.305px;
+                                            height: 20.599px;
+                                            flex-shrink: 0;
+                                            fill: var(--on-surface-variant, #7A7C84);
+                                        }
+
+                                        >div:nth-child(2).vector {
+                                            width: 35.305px;
+                                            height: 20.599px;
+                                            flex-shrink: 0;
+                                            fill: var(--on-surface-variant, #7A7C84);
+                                        }
                                     }
-
-
 
                                     >div:nth-child(2).vector {
-                                        width: 35.305px;
-                                        height: 20.599px;
+                                        width: 58.973px;
+                                        height: 15.204px;
                                         flex-shrink: 0;
                                         fill: var(--on-surface-variant, #7A7C84);
                                     }
-                                }
-
-
-
-                                >div:nth-child(2).vector {
-                                    width: 58.973px;
-                                    height: 15.204px;
-                                    flex-shrink: 0;
-                                    fill: var(--on-surface-variant, #7A7C84);
                                 }
                             }
                         }
@@ -1586,771 +1379,129 @@ section.collaborating-partners {
             }
         }
     }
-}
 
+    >section.our-team {
+        @include mixins.row-center-center;
+        gap: 10px;
+        align-self: stretch;
+        background: var(--surface-variant, #F7F7FC);
 
+        >div:nth-child(1).container {
+            @include mixins.column-top-left;
+            max-width: 1200px;
+            padding: 120px 0 160px 0;
+            gap: 60px;
+            flex: 1 0 0;
 
-/*----- Our Team -----*/
-
-section.our-team {
-    @include mixins.row-center-center;
-    gap: 10px;
-    align-self: stretch;
-    background: var(--surface-variant, #FAFBFD);
-
-    >div:nth-child(1).container {
-        @include mixins.column-top-left;
-        max-width: 1200px;
-        padding: 120px 0 160px 0;
-        gap: 60px;
-        flex: 1 0 0;
-
-        >div:nth-child(1).frame {
-            @include mixins.column-top-center;
-            gap: 16px;
-            align-self: stretch;
-
-            >h2:nth-child(1) {
-                @include mixins.row-center-center;
-                gap: 8px;
+            >div:nth-child(1).frame {
+                @include mixins.column-top-center;
+                gap: 16px;
                 align-self: stretch;
 
-                >span:nth-child(1) {
-                    @include text.m-headline-large;
-                    color: var(--on-surface, #222432);
-                    text-align: center;
+                >h2:nth-child(1) {
+                    @include mixins.row-center-center;
+                    gap: 8px;
+                    align-self: stretch;
+
+                    >span:nth-child(1) {
+                        @include text.m-headline-large;
+                        color: var(--on-surface, #222432);
+                        text-align: center;
+                    }
+
+                    >span:nth-child(2) {
+                        @include text.m-headline-large;
+                        color: var(--primary, #0050F1);
+                        text-align: center;
+                    }
                 }
 
-                >span:nth-child(2) {
-                    @include text.m-headline-large;
-                    color: var(--primary, #0050F1);
+                >p:nth-child(2) {
+                    @include text.m-body-medium;
+                    align-self: stretch;
+                    color: var(--on-surface-variant, #7A7C84);
                     text-align: center;
                 }
             }
 
-            >p:nth-child(2) {
-                @include text.m-body-medium;
+            >div:nth-child(2).content {
+                @include mixins.row-top-left;
+                gap: 24px;
                 align-self: stretch;
-                color: var(--on-surface-variant, #7A7C84);
-                text-align: center;
-            }
-        }
 
-        >div:nth-child(2).content {
-            @include mixins.row-top-left;
-            gap: 24px;
-            align-self: stretch;
-
-            >div:nth-child(1).card-d-highlight {
-                @include mixins.row-top-center;
-                padding: 40px;
-                gap: 28px;
-                flex: 1 0 0;
-                border-radius: 20px;
-                border: 1px solid var(--outline-variant, #EBECF3);
-                background: var(--black, #1A1C28);
-
-                >div:nth-child(1).frame {
-                    @include mixins.row-top-left;
-                    gap: 40px;
+                >div:nth-child(2).frame {
+                    @include mixins.column-top-left;
+                    gap: 24px;
                     flex: 1 0 0;
+                    position: relative;
 
                     >div:nth-child(1).frame {
-                        @include mixins.column-top-left;
-                        width: 160px;
-                        border-radius: 40px;
+                        width: 120px;
+                        height: 120px;
+                        position: absolute;
+                        right: -50px;
+                        top: 246px;
+                        left: unset;
+                        right: -50px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        bottom: unset;
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
 
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            gap: 40px;
-                            align-self: stretch;
+    >section.join-us {
+        @include mixins.row-center-center;
+        gap: 10px;
+        align-self: stretch;
+        background: var(--surface, #FFF);
 
-                            >div:nth-child(1).group-29 {
-                                height: 200px;
-                                align-self: stretch;
-                                aspect-ratio: 4/5;
+        >div:nth-child(1).container {
+            @include mixins.column-top-left;
+            max-width: 1200px;
+            padding: 120px 0 160px 0;
+            gap: 60px;
+            flex: 1 0 0;
 
-                                >div:nth-child(1).frame {
-                                    width: 160px;
-                                    height: 200px;
-                                    flex-shrink: 0;
-                                }
+            >div:nth-child(1).frame {
+                @include mixins.column-top-left;
+                gap: 16px;
+                align-self: stretch;
 
-                                >div:nth-child(2).rectangle {
-                                    width: 160px;
-                                    height: 200px;
-                                    flex-shrink: 0;
-                                    aspect-ratio: 4/5;
-                                    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                                }
-                            }
-                        }
+                >h2:nth-child(1) {
+                    @include mixins.row-top-left;
+                    align-content: flex-start;
+                    gap: 8px;
+                    align-self: stretch;
+                    flex-wrap: wrap;
+
+                    >span:nth-child(1) {
+                        @include text.m-headline-large;
+                        color: var(--primary, #0050F1);
                     }
 
-                    >div:nth-child(2).frame {
-                        @include mixins.column-top-left;
-                        padding: 16px 0;
-                        gap: 32px;
-                        flex: 1 0 0;
-                        border-radius: 40px;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            gap: 24px;
-                            align-self: stretch;
-
-                            >div:nth-child(1).frame {
-                                @include mixins.column-top-left;
-                                align-self: stretch;
-
-                                >h2:nth-child(1) {
-                                    @include text.m-headline-small;
-                                    align-self: stretch;
-                                    color: var(--white, #FFF);
-                                }
-
-                                >label:nth-child(2) {
-                                    @include text.m-label-large;
-                                    align-self: stretch;
-                                    color: var(--white, #FFF);
-                                    opacity: 0.4;
-                                }
-                            }
-
-                            >p:nth-child(2) {
-                                @include text.m-body-medium;
-                                display: -webkit-box;
-                                -webkit-box-orient: vertical;
-                                -webkit-line-clamp: 10;
-                                align-self: stretch;
-                                overflow: hidden;
-                                color: var(--white, #FFF);
-                                text-overflow: ellipsis;
-                                opacity: 0.6;
-                            }
-                        }
-
-                        >div:nth-child(2).frame {
-                            @include mixins.row-center-center;
-                            width: 160px;
-                            height: 40px;
-                            border-radius: 100px;
-                            background: var(--primary, #0050F1);
-                            position: relative;
-
-                            >div:nth-child(1).state-layer {
-                                @include mixins.column-top-left;
-                                width: 160px;
-                                height: 40px;
-                                gap: 10px;
-                                position: absolute;
-                                left: 0%;
-                                right: unset;
-                                width: 100%;
-                                top: 0%;
-                                bottom: unset;
-                                height: 100%;
-                            }
-
-                            >div:nth-child(2).frame {
-                                @include mixins.row-center-center;
-                                padding: 12px;
-                                flex: 1 0 0;
-                                align-self: stretch;
-
-                                >div:nth-child(1).frame {
-                                    @include mixins.row-center-center;
-                                    padding: 0 4px;
-
-                                    >label:nth-child(1) {
-                                        @include text.m-label-medium;
-                                        color: var(--white, #FFF);
-                                        text-align: center;
-                                    }
-                                }
-
-                                >div:nth-child(2).frame {
-                                    width: 20px;
-                                    height: 20px;
-                                    aspect-ratio: 1/1;
-                                }
-                            }
-                        }
+                    >span:nth-child(2) {
+                        @include text.m-headline-large;
+                        color: var(--on-surface, #222432);
                     }
+                }
+
+                >p:nth-child(2) {
+                    @include text.m-body-medium;
+                    align-self: stretch;
+                    color: var(--on-surface-variant, #7A7C84);
                 }
             }
 
             >div:nth-child(2).frame {
                 @include mixins.column-top-left;
-                gap: 24px;
-                flex: 1 0 0;
-                position: relative;
-
-                >div:nth-child(1).frame {
-                    width: 120px;
-                    height: 120px;
-                    position: absolute;
-                    right: -50px;
-                    top: 246px;
-                    left: unset;
-                    right: -50px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    bottom: unset;
-                    width: 120px;
-                    height: 120px;
-                }
-
-                >div:nth-child(2).card-d {
-                    @include mixins.row-top-center;
-                    padding: 28px;
-                    gap: 24px;
-                    align-self: stretch;
-                    border-radius: 20px;
-                    background: var(--surface-container, rgba(255, 255, 255, 0.70));
-                    backdrop-filter: blur(8px);
-
-                    >div:nth-child(1).group-31 {
-                        width: 80px;
-                        height: 80px;
-                        aspect-ratio: 1/1;
-
-                        >div:nth-child(1).frame {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                        }
-
-                        >div:nth-child(2).rectangle {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                        }
-                    }
-
-                    >div:nth-child(2).texts {
-                        @include mixins.column-top-left;
-                        gap: 8px;
-                        flex: 1 0 0;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            align-self: stretch;
-
-                            >h4:nth-child(1) {
-                                @include text.m-title-medium;
-                                align-self: stretch;
-                                color: var(--on-surface, #222432);
-                            }
-
-                            >p:nth-child(2) {
-                                @include text.m-body-medium;
-                                align-self: stretch;
-                                color: var(--on-surface-variant, #7A7C84);
-                            }
-                        }
-
-                        >p:nth-child(2) {
-                            @include text.m-body-medium;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            align-self: stretch;
-                            overflow: hidden;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-overflow: ellipsis;
-                        }
-                    }
-
-                    >div:nth-child(3).frame {
-                        width: 24px;
-                        height: 24px;
-                        aspect-ratio: 1/1;
-                    }
-                }
-
-                >div:nth-child(3).card-d {
-                    @include mixins.row-top-center;
-                    padding: 28px;
-                    gap: 24px;
-                    align-self: stretch;
-                    border-radius: 20px;
-                    background: var(--surface-container, rgba(255, 255, 255, 0.70));
-                    backdrop-filter: blur(8px);
-
-                    >div:nth-child(1).group-29 {
-                        width: 80px;
-                        height: 80px;
-                        aspect-ratio: 1/1;
-
-                        >div:nth-child(1).frame {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                        }
-
-                        >div:nth-child(2).rectangle {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                        }
-                    }
-
-                    >div:nth-child(2).texts {
-                        @include mixins.column-top-left;
-                        gap: 8px;
-                        flex: 1 0 0;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            align-self: stretch;
-
-                            >h4:nth-child(1) {
-                                @include text.m-title-medium;
-                                align-self: stretch;
-                                color: var(--on-surface, #222432);
-                            }
-
-                            >p:nth-child(2) {
-                                @include text.m-body-medium;
-                                align-self: stretch;
-                                color: var(--on-surface-variant, #7A7C84);
-                            }
-                        }
-
-                        >p:nth-child(2) {
-                            @include text.m-body-medium;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            align-self: stretch;
-                            overflow: hidden;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-overflow: ellipsis;
-                        }
-                    }
-
-                    >div:nth-child(3).frame {
-                        width: 24px;
-                        height: 24px;
-                        aspect-ratio: 1/1;
-                    }
-                }
-
-                >div:nth-child(4).card-d {
-                    @include mixins.row-top-center;
-                    padding: 28px;
-                    gap: 24px;
-                    align-self: stretch;
-                    border-radius: 20px;
-                    background: var(--surface-container, rgba(255, 255, 255, 0.70));
-                    backdrop-filter: blur(8px);
-
-                    >div:nth-child(1).group-29 {
-                        width: 80px;
-                        height: 80px;
-                        aspect-ratio: 1/1;
-
-                        >div:nth-child(1).frame {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                        }
-
-                        >div:nth-child(2).rectangle {
-                            width: 80px;
-                            height: 80px;
-                            flex-shrink: 0;
-                            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-                        }
-                    }
-
-                    >div:nth-child(2).texts {
-                        @include mixins.column-top-left;
-                        gap: 8px;
-                        flex: 1 0 0;
-
-                        >div:nth-child(1).frame {
-                            @include mixins.column-top-left;
-                            align-self: stretch;
-
-                            >h4:nth-child(1) {
-                                @include text.m-title-medium;
-                                align-self: stretch;
-                                color: var(--on-surface, #222432);
-                            }
-
-                            >p:nth-child(2) {
-                                @include text.m-body-medium;
-                                align-self: stretch;
-                                color: var(--on-surface-variant, #7A7C84);
-                            }
-                        }
-
-                        >p:nth-child(2) {
-                            @include text.m-body-medium;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            align-self: stretch;
-                            overflow: hidden;
-                            color: var(--on-surface-variant, #7A7C84);
-                            text-overflow: ellipsis;
-                        }
-                    }
-
-                    >div:nth-child(3).frame {
-                        width: 24px;
-                        height: 24px;
-                        aspect-ratio: 1/1;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-/*----- Recruiting -----*/
-
-section.join-us {
-    @include mixins.row-center-center;
-    gap: 10px;
-    align-self: stretch;
-    background: var(--surface, #FFF);
-
-    >div:nth-child(1).container {
-        @include mixins.column-top-left;
-        max-width: 1200px;
-        padding: 120px 0 160px 0;
-        gap: 60px;
-        flex: 1 0 0;
-
-        >div:nth-child(1).frame {
-            @include mixins.column-top-left;
-            gap: 16px;
-            align-self: stretch;
-
-            >h2:nth-child(1) {
-                @include mixins.row-top-left;
-                align-content: flex-start;
-                gap: 8px;
+                gap: 1px;
                 align-self: stretch;
-                flex-wrap: wrap;
-
-                >span:nth-child(1) {
-                    @include text.m-headline-large;
-                    color: var(--primary, #0050F1);
-                }
-
-                >span:nth-child(2) {
-                    @include text.m-headline-large;
-                    color: var(--on-surface, #222432);
-                }
-            }
-
-            >p:nth-child(2) {
-                @include text.m-body-medium;
-                align-self: stretch;
-                color: var(--on-surface-variant, #7A7C84);
-            }
-        }
-
-        >div:nth-child(2).frame {
-            @include mixins.column-top-left;
-            gap: 1px;
-            align-self: stretch;
-            background: var(--outline-variant, #EBECF3);
-
-            >div:nth-child(1).frame {
-                @include mixins.row-top-left;
-                padding: 24px 20px;
-                gap: 20px;
-                align-self: stretch;
-                background: var(--surface, #FFF);
-
-                >div:nth-child(1).frame {
-                    @include mixins.column-center-left;
-                    height: 40px;
-                    gap: 10px;
-
-                    >div:nth-child(1).frame {
-                        @include mixins.row-center-center;
-                        padding: 0 4px;
-                        gap: 10px;
-                        align-self: stretch;
-                        border-radius: 4px;
-                        border: 0.5px solid var(--on-surface, #222432);
-
-                        >p:nth-child(1) {
-                            color: var(--on-surface, #222432);
-                            font-family: Poppins;
-                            font-size: 10px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 14px
-                                /* 140% */
-                            ;
-                        }
-                    }
-                }
-
-                >div:nth-child(2).frame {
-                    @include mixins.row-center-center;
-                    padding: 6px 0;
-                    gap: 10px;
-                    flex: 1 0 0;
-
-                    >p:nth-child(1) {
-                        flex: 1 0 0;
-                        color: var(--on-surface, #222432);
-                        font-family: Poppins;
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 180%
-                            /* 28.8px */
-                        ;
-                        text-transform: uppercase;
-                    }
-                }
-
-                >div:nth-child(3).frame {
-                    @include mixins.row-center-center;
-                    width: 40px;
-                    height: 40px;
-                    padding: 5px;
-                    gap: 10px;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.00);
-
-                    >div:nth-child(1).vector {
-                        width: 12px;
-                        height: 12px;
-                        flex-shrink: 0;
-                        aspect-ratio: 1/1;
-                        fill: var(--on-surface, #222432);
-                    }
-                }
-            }
-
-            >div:nth-child(2).frame {
-                @include mixins.row-top-left;
-                padding: 24px 20px;
-                gap: 20px;
-                align-self: stretch;
-                background: var(--surface, #FFF);
-
-                >div:nth-child(1).frame {
-                    @include mixins.column-center-left;
-                    height: 40px;
-                    gap: 10px;
-
-                    >div:nth-child(1).frame {
-                        @include mixins.row-center-center;
-                        padding: 0 4px;
-                        gap: 10px;
-                        align-self: stretch;
-                        border-radius: 4px;
-                        border: 0.5px solid var(--primary, #0050F1);
-
-                        >p:nth-child(1) {
-                            color: var(--primary, #0050F1);
-                            font-family: Poppins;
-                            font-size: 10px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 14px
-                                /* 140% */
-                            ;
-                        }
-                    }
-                }
-
-                >div:nth-child(2).frame {
-                    @include mixins.row-center-center;
-                    padding: 6px 0;
-                    gap: 10px;
-                    flex: 1 0 0;
-
-                    >p:nth-child(1) {
-                        flex: 1 0 0;
-                        color: var(--primary, #0050F1);
-                        font-family: Poppins;
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 180%
-                            /* 28.8px */
-                        ;
-                        text-transform: uppercase;
-                    }
-                }
-
-                >div:nth-child(3).frame {
-                    @include mixins.row-center-center;
-                    width: 40px;
-                    height: 40px;
-                    padding: 5px;
-                    gap: 10px;
-                    border-radius: 12px;
-                    background: var(--primary, #0050F1);
-
-                    >div:nth-child(1).vector {
-                        width: 12px;
-                        height: 12px;
-                        flex-shrink: 0;
-                        aspect-ratio: 1/1;
-                        fill: #FFF;
-                    }
-                }
-            }
-
-            >div:nth-child(3).frame {
-                @include mixins.row-top-left;
-                padding: 24px 20px;
-                gap: 20px;
-                align-self: stretch;
-                background: var(--surface, #FFF);
-
-                >div:nth-child(1).frame {
-                    @include mixins.column-center-left;
-                    height: 40px;
-                    gap: 10px;
-
-                    >div:nth-child(1).frame {
-                        @include mixins.row-center-center;
-                        padding: 0 4px;
-                        gap: 10px;
-                        align-self: stretch;
-                        border-radius: 4px;
-                        border: 0.5px solid var(--on-surface, #222432);
-
-                        >p:nth-child(1) {
-                            color: var(--on-surface, #222432);
-                            font-family: Poppins;
-                            font-size: 10px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 14px
-                                /* 140% */
-                            ;
-                        }
-                    }
-                }
-
-                >div:nth-child(2).frame {
-                    @include mixins.row-center-center;
-                    padding: 6px 0;
-                    gap: 10px;
-                    flex: 1 0 0;
-
-                    >p:nth-child(1) {
-                        flex: 1 0 0;
-                        color: var(--on-surface, #222432);
-                        font-family: Poppins;
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 180%
-                            /* 28.8px */
-                        ;
-                        text-transform: uppercase;
-                    }
-                }
-
-                >div:nth-child(3).frame {
-                    @include mixins.row-center-center;
-                    width: 40px;
-                    height: 40px;
-                    padding: 5px;
-                    gap: 10px;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.00);
-
-                    >div:nth-child(1).vector {
-                        width: 12px;
-                        height: 12px;
-                        flex-shrink: 0;
-                        aspect-ratio: 1/1;
-                        fill: var(--on-surface, #222432);
-                    }
-                }
-            }
-
-            >div:nth-child(4).frame {
-                @include mixins.row-top-left;
-                padding: 24px 20px;
-                gap: 20px;
-                align-self: stretch;
-                background: var(--surface, #FFF);
-
-                >div:nth-child(1).frame {
-                    @include mixins.column-center-left;
-                    height: 40px;
-                    gap: 10px;
-
-                    >div:nth-child(1).frame {
-                        @include mixins.row-center-center;
-                        padding: 0 4px;
-                        gap: 10px;
-                        align-self: stretch;
-                        border-radius: 4px;
-                        border: 0.5px solid var(--on-surface, #222432);
-
-                        >p:nth-child(1) {
-                            color: var(--on-surface, #222432);
-                            font-family: Poppins;
-                            font-size: 10px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 14px
-                                /* 140% */
-                            ;
-                        }
-                    }
-                }
-
-                >div:nth-child(2).frame {
-                    @include mixins.row-center-center;
-                    padding: 6px 0;
-                    gap: 10px;
-                    flex: 1 0 0;
-
-                    >p:nth-child(1) {
-                        flex: 1 0 0;
-                        color: var(--on-surface, #222432);
-                        font-family: Poppins;
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 180%
-                            /* 28.8px */
-                        ;
-                        text-transform: uppercase;
-                    }
-                }
-
-                >div:nth-child(3).frame {
-                    @include mixins.row-center-center;
-                    width: 40px;
-                    height: 40px;
-                    padding: 5px;
-                    gap: 10px;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.00);
-
-                    >div:nth-child(1).vector {
-                        width: 12px;
-                        height: 12px;
-                        flex-shrink: 0;
-                        aspect-ratio: 1/1;
-                        fill: var(--on-surface, #222432);
-                    }
-                }
+                background: var(--outline-variant, #EBECF3);
             }
         }
     }

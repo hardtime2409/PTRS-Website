@@ -3,52 +3,255 @@
 @use "mixins";
 
 
+.faq {
+    overflow: hidden;
 
-.card-dev-scope {
-    @include mixins.row-top-left;
-    padding: 12px;
-    gap: 12px;
-    flex: 1 0 0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(4px);
-
-    >div:nth-child(1).icon-wrapper {
-        @include mixins.column-center-center;
-        width: 48px;
-        height: 48px;
+    &.faq {
+        @include mixins.row-top-left;
+        padding: 24px 20px 24px 28px;
         gap: 10px;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.08);
+        background: var(--surface, #FFF);
+        align-self: stretch;
+
+        >div:nth-child(1).content {
+            @include mixins.column-top-left;
+            gap: 16px;
+            flex: 1 0 0;
+            align-self: stretch;
+
+            >h4:nth-child(1) {
+                @include text.m-title-small;
+                max-width: 960px;
+                color: var(--on-surface, #222432);
+                align-self: stretch;
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                max-width: 960px;
+                align-self: stretch;
+                color: var(--on-surface-variant, #7A7C84);
+                display: none;
+            }
+        }
     }
 
-    >div:nth-child(2).info {
-        @include mixins.column-top-left;
-        padding: 4px 0;
-        gap: 2px;
-        flex: 1 0 0;
+    &.faq.active {
+        @include mixins.row-top-left;
+        padding: 24px 20px 24px 28px;
+        gap: 10px;
+        background: var(--surface, #FFF);
+        align-self: stretch;
 
-        >h4:nth-child(1) {
-            @include text.m-title-small;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
+        >div:nth-child(1).content {
+            @include mixins.column-top-left;
+            gap: 16px;
+            flex: 1 0 0;
             align-self: stretch;
-            overflow: hidden;
-            color: var(--white, #FFF);
-            text-overflow: ellipsis;
+
+            >h4:nth-child(1) {
+                @include text.m-title-small;
+                max-width: 960px;
+                color: #121C44;
+                align-self: stretch;
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                max-width: 960px;
+                color: var(--on-surface-variant, #7A7C84);
+                align-self: stretch;
+            }
+        }
+    }
+}
+
+
+
+
+
+.card-recruitment {
+    @include mixins.column-top-left;
+    padding: 40px;
+    gap: 28px;
+    align-self: stretch;
+    background: var(--surface, #FFF);
+
+    >div:nth-child(1).info {
+        @include mixins.column-top-left;
+        gap: 20px;
+        align-self: stretch;
+
+        >div:nth-child(1).meta {
+            @include mixins.column-top-left;
+            gap: 8px;
+            align-self: stretch;
+
+            >h4:nth-child(1) {
+                @include text.m-title-medium;
+                align-self: stretch;
+                color: var(--on-surface, #222432);
+            }
+
+            >div:nth-child(2).tags {
+                @include mixins.row-top-left;
+                gap: 8px;
+            }
         }
 
         >p:nth-child(2) {
-            @include text.m-body-medium;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
+            @include mixins.row-top-left;
+            gap: 8px;
+
+            >span:nth-child(1) {
+                @include text.m-body-medium;
+                color: var(--on-surface-variant, #7A7C84);
+            }
+
+            >span:nth-child(2) {
+                @include text.m-body-medium;
+                color: var(--on-surface, #222432);
+            }
+        }
+
+        >div:nth-child(3).description {
+            @include mixins.column-top-left;
+            height: 200px;
+            gap: 8px;
             align-self: stretch;
+            position: relative;
             overflow: hidden;
-            color: var(--white, #FFF);
-            text-overflow: ellipsis;
-            opacity: 0.5;
+
+            >h4:nth-child(1) {
+                @include text.m-title-small;
+                align-self: stretch;
+                color: var(--on-surface, #222432);
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                align-self: stretch;
+                color: var(--on-surface, #222432);
+                opacity: 0.6;
+            }
+
+            >div:nth-child(3).rect {
+                width: 880px;
+                height: 80px;
+                position: absolute;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+                left: 0%;
+                bottom: 140px;
+                width: 100%;
+                height: 80px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card-dev-scope {
+    overflow: hidden;
+
+    & {
+        display: inline-flex;
+        padding: 12px;
+        align-items: flex-start;
+        gap: 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(4px);
+
+        >div:nth-child(1).icon-wrapper {
+            @include mixins.column-center-center;
+            width: 48px;
+            height: 48px;
+            gap: 10px;
+            border-radius: 8px;
+        }
+
+        >div:nth-child(2).info {
+            @include mixins.column-top-left;
+            height: 54px;
+            padding: 4px 0;
+            gap: 2px;
+            flex: 1 0 0;
+            overflow: hidden;
+            display: none;
+
+            >h4:nth-child(1) {
+                @include text.m-title-small;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                align-self: stretch;
+                overflow: hidden;
+                color: var(--white, #FFF);
+                text-overflow: ellipsis;
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                align-self: stretch;
+                color: var(--white, #FFF);
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &.active {
+        @include mixins.row-top-left;
+        width: 1108px;
+        padding: 12px;
+        gap: 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(4px);
+
+        >div:nth-child(1).icon-wrapper {
+            @include mixins.column-center-center;
+            width: 48px;
+            height: 48px;
+            gap: 10px;
+            flex-shrink: 0;
+            border-radius: 8px;
+        }
+
+        >div:nth-child(2).info {
+            @include mixins.column-top-left;
+            height: 54px;
+            padding: 4px 0;
+            gap: 2px;
+            flex: 1 0 0;
+            overflow: hidden;
+
+            >h4:nth-child(1) {
+                @include text.m-title-small;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                align-self: stretch;
+                overflow: hidden;
+                color: var(--white, #FFF);
+                text-overflow: ellipsis;
+            }
+
+            >p:nth-child(2) {
+                @include text.m-body-medium;
+                align-self: stretch;
+                color: var(--white, #FFF);
+                opacity: 0.5;
+            }
         }
     }
 }

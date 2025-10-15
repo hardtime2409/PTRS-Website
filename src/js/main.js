@@ -121,7 +121,7 @@ function sampleFunction() {
 document.addEventListener("DOMContentLoaded", () => {
     // Init Context
     const c = document.createElement('canvas').getContext('2d');
-    var container = document.getElementById("intro-svg-dots");
+    var container = document.getElementById("dots-wave");
     const postctx = container.appendChild(document.createElement('canvas')).getContext('2d');
     const canvas = c.canvas;
     const vertices = [];
@@ -150,10 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         c.fillStyle = `hsl(240deg, 50%, 4%)`;
-        
+
         // c.fillStyle = '#1A1C28';
         c.fillRect(0, 0, canvas.width, canvas.height);
-        
+
         c.save();
         c.translate(canvas.width / 2, canvas.height / 2);
 
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            
+
             let y = vertex[1] + wave * waveSize;
             const a = Math.max(0, 1 - (Math.sqrt(x ** 2 + z ** 2)) / depth);
 
@@ -273,3 +273,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const targets = document.querySelectorAll(".card-dev-scope .info p");
+
+    targets.forEach((p) => {
+        const lines = p.innerHTML
+            .split(/<br\s*\/?>/i)
+            .map(line => line.trim())
+            .filter(Boolean);
+
+        // Bỏ nội dung cũ, tạo <span> cho từng dòng
+        p.innerHTML = lines.map(line => `<span>${line}</span>`).join("");
+
+        const spans = p.querySelectorAll("span");
+        if (spans.length <= 1) return; // chỉ 1 dòng thì bỏ qua animation
+
+        let index = 0;
+        spans[index].classList.add("active");
+
+        // random delay 0–1s trước khi bắt đầu
+        const delay = Math.random() * 1000;
+
+        setTimeout(() => {
+            setInterval(() => {
+                const current = spans[index];
+                index = (index + 1) % spans.length;
+                const next = spans[index];
+
+                current.classList.remove("active");
+                current.classList.add("exiting");
+                next.classList.add("active");
+
+                setTimeout(() => current.classList.remove("exiting"), 600);
+            }, 2000);
+        }, delay);
+    });
+});
